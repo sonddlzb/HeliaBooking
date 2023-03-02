@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Regular.otf">
+            <string>Outfit-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntroductionViewController" customModule="HeliaHotelBooking" customModuleProvider="target">
             <connections>
@@ -42,11 +47,11 @@
                             </connections>
                         </collectionView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iB9-C1-vt2" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
-                            <rect key="frame" x="30" y="592" width="333" height="58"/>
+                            <rect key="frame" x="30" y="592" width="333" height="56"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8k-Vz-bHA">
-                                    <rect key="frame" x="148.66666666666666" y="19" width="35.666666666666657" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="148.66666666666666" y="19" width="35.666666666666657" height="18"/>
+                                    <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -73,11 +78,11 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjN-0h-kW4" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
-                            <rect key="frame" x="30" y="667" width="333" height="58"/>
+                            <rect key="frame" x="30" y="665" width="333" height="60"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0y-K0-hN3">
-                                    <rect key="frame" x="148.66666666666666" y="19" width="35.666666666666657" height="20"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0y-K0-hN3">
+                                    <rect key="frame" x="151" y="21" width="31.333333333333343" height="18"/>
+                                    <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
                                     <color key="textColor" red="0.10196078431372549" green="0.71372549019607845" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>

@@ -7,5 +7,7 @@ target 'HeliaHotelBooking' do
 
   # Pods for HeliaHotelBooking
   pod 'SwiftLint'
+  pod 'FBSDKLoginKit'
+  
 
 end

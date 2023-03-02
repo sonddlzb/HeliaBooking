@@ -1,16 +1,33 @@
 PODS:
+  - FBAEMKit (16.0.0):
+    - FBSDKCoreKit_Basics (= 16.0.0)
+  - FBSDKCoreKit (16.0.0):
+    - FBAEMKit (= 16.0.0)
+    - FBSDKCoreKit_Basics (= 16.0.0)
+  - FBSDKCoreKit_Basics (16.0.0)
+  - FBSDKLoginKit (16.0.0):
+    - FBSDKCoreKit (= 16.0.0)
   - SwiftLint (0.50.3)
 
 DEPENDENCIES:
+  - FBSDKLoginKit
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - FBAEMKit
+    - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKLoginKit
     - SwiftLint
 
 SPEC CHECKSUMS:
+  FBAEMKit: 7fb5a0b5caf2ed2900e29c3a17de92ea7193a247
+  FBSDKCoreKit: 2a77418391aaa5da38ebf57b90b6de42cebcce6a
+  FBSDKCoreKit_Basics: 65c5b3146f38705b95338b54f68ea086bcc468dd
+  FBSDKLoginKit: 1a0deda07b1136beb0d468bf154393de6c16e291
   SwiftLint: 77f7cb2b9bb81ab4a12fcc86448ba3f11afa50c6
 
-PODFILE CHECKSUM: fdd8f7ebdc1fe32a2bd3dfa6b30c9458c5d2df3b
+PODFILE CHECKSUM: 1c705e13f13ecb732cccdf1840d2d9c5dc339626
 
 COCOAPODS: 1.11.3

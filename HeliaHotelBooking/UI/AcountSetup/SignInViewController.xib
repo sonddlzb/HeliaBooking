@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,6 +8,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Bold.otf">
+            <string>Outfit-Bold</string>
+        </array>
+        <array key="Outfit-Regular.otf">
+            <string>Outfit-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="HeliaHotelBooking" customModuleProvider="target">
             <connections>
@@ -16,30 +24,282 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8O-Cw-RDV">
-                    <rect key="frame" x="29" y="1" width="50" height="128"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTU-jv-HJZ" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="30" y="429.5" width="354" height="63"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoogleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="y8d-Te-1qr">
+                            <rect key="frame" x="62" y="16" width="31" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="OtU-zf-Sg5"/>
+                                <constraint firstAttribute="height" constant="31" id="OwX-uj-aKq"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1X-oQ-Hhm">
+                            <rect key="frame" x="101" y="22.5" width="245" height="18"/>
+                            <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="y8d-Te-1qr" firstAttribute="centerY" secondItem="gTU-jv-HJZ" secondAttribute="centerY" id="Der-hV-IOG"/>
+                        <constraint firstItem="d1X-oQ-Hhm" firstAttribute="centerY" secondItem="y8d-Te-1qr" secondAttribute="centerY" id="DpH-Hf-PJw"/>
+                        <constraint firstAttribute="height" constant="63" id="GVn-bq-hmo"/>
+                        <constraint firstItem="y8d-Te-1qr" firstAttribute="leading" secondItem="gTU-jv-HJZ" secondAttribute="leading" constant="62" id="HXd-L9-LDb"/>
+                        <constraint firstAttribute="trailing" secondItem="d1X-oQ-Hhm" secondAttribute="trailing" constant="8" id="IaP-QI-Ah5"/>
+                        <constraint firstItem="d1X-oQ-Hhm" firstAttribute="leading" secondItem="y8d-Te-1qr" secondAttribute="trailing" constant="8" id="fNs-zG-OqQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkS-UE-7Mz" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="30" y="502.5" width="354" height="63"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppleLogo" translatesAutoresizingMaskIntoConstraints="NO" id="L1G-Wp-iL0">
+                            <rect key="frame" x="62" y="16" width="31" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="31" id="1P9-kj-L8b"/>
+                                <constraint firstAttribute="height" constant="31" id="yd9-gM-GyW"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5d-Hs-N66">
+                            <rect key="frame" x="101" y="22.5" width="245" height="18"/>
+                            <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="69N-c4-SBg"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="63" id="AHc-Zj-8Cq"/>
+                        <constraint firstItem="L1G-Wp-iL0" firstAttribute="centerY" secondItem="dkS-UE-7Mz" secondAttribute="centerY" id="JKg-ws-Wx2"/>
+                        <constraint firstAttribute="trailing" secondItem="s5d-Hs-N66" secondAttribute="trailing" constant="8" id="YQ5-uq-Ihg"/>
+                        <constraint firstItem="s5d-Hs-N66" firstAttribute="centerY" secondItem="L1G-Wp-iL0" secondAttribute="centerY" id="lyG-Pq-hAR"/>
+                        <constraint firstItem="L1G-Wp-iL0" firstAttribute="leading" secondItem="dkS-UE-7Mz" secondAttribute="leading" constant="62" id="yIP-A7-RTe"/>
+                        <constraint firstItem="s5d-Hs-N66" firstAttribute="leading" secondItem="L1G-Wp-iL0" secondAttribute="trailing" constant="8" id="yzA-PQ-8kA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgO-t8-7mK">
+                    <rect key="frame" x="30" y="606" width="157.5" height="2"/>
+                    <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="gdh-Rm-4th"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlg-BK-PQ4">
+                    <rect key="frame" x="197.5" y="596.5" width="19" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCA-U8-fNK">
+                    <rect key="frame" x="226.5" y="606" width="157.5" height="2"/>
+                    <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="oJl-wj-FeX"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDa-7t-VRA" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="30" y="698" width="354" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxh-K6-b1l">
+                            <rect key="frame" x="0.0" y="21" width="354" height="18"/>
+                            <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.10196078431372549" green="0.71372549019607845" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Agz-f1-5HB"/>
+                        <constraint firstAttribute="trailing" secondItem="gxh-K6-b1l" secondAttribute="trailing" id="D20-zH-Xuy"/>
+                        <constraint firstAttribute="bottom" secondItem="gxh-K6-b1l" secondAttribute="bottom" constant="21" id="aaF-mU-c6A"/>
+                        <constraint firstItem="gxh-K6-b1l" firstAttribute="top" secondItem="YDa-7t-VRA" secondAttribute="top" constant="21" id="opt-pj-Ug3"/>
+                        <constraint firstItem="gxh-K6-b1l" firstAttribute="leading" secondItem="YDa-7t-VRA" secondAttribute="leading" id="s4i-R8-NB7"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irA-BK-Jgl">
+                    <rect key="frame" x="30" y="822" width="244" height="20"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" red="0.76078431372549016" green="0.76078431372549016" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfD-Gh-qkA" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="274" y="822" width="110" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXn-4I-4Xr">
+                            <rect key="frame" x="0.0" y="1" width="55" height="18"/>
+                            <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
+                            <color key="textColor" red="0.10196078431372549" green="0.71372549019607845" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JXn-4I-4Xr" firstAttribute="leading" secondItem="sfD-Gh-qkA" secondAttribute="leading" id="dao-tT-Ohd"/>
+                        <constraint firstItem="JXn-4I-4Xr" firstAttribute="centerY" secondItem="sfD-Gh-qkA" secondAttribute="centerY" id="h6k-PS-PPr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's you in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r12-Ry-kgh">
+                    <rect key="frame" x="30" y="242" width="354" height="42.5"/>
+                    <fontDescription key="fontDescription" name="Outfit-Bold" family="Outfit" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4V-xV-kAi" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="30" y="356.5" width="354" height="63"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FacebookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="dWb-Kd-Vl9">
+                            <rect key="frame" x="62" y="16" width="31" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="76x-Fa-lip"/>
+                                <constraint firstAttribute="width" constant="31" id="Z4n-PR-vA3"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohw-VA-SMP">
+                            <rect key="frame" x="101" y="22.5" width="245" height="18"/>
+                            <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="Pog-TG-6MD"/>
+                        <constraint firstItem="dWb-Kd-Vl9" firstAttribute="leading" secondItem="l4V-xV-kAi" secondAttribute="leading" constant="62" id="SnT-9o-QVP"/>
+                        <constraint firstAttribute="trailing" secondItem="Ohw-VA-SMP" secondAttribute="trailing" constant="8" id="VCm-H7-jPF"/>
+                        <constraint firstItem="dWb-Kd-Vl9" firstAttribute="centerY" secondItem="l4V-xV-kAi" secondAttribute="centerY" id="fZj-m3-K51"/>
+                        <constraint firstItem="Ohw-VA-SMP" firstAttribute="leading" secondItem="dWb-Kd-Vl9" secondAttribute="trailing" constant="8" id="j7f-ax-ifY"/>
+                        <constraint firstItem="Ohw-VA-SMP" firstAttribute="centerY" secondItem="dWb-Kd-Vl9" secondAttribute="centerY" id="nvi-dW-OAk"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHz-yc-rKz">
+                    <rect key="frame" x="20" y="48" width="20.5" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="." image="arrow.backward" catalog="system"/>
                     <connections>
-                        <action selector="popScreen:" destination="-1" eventType="touchUpInside" id="jtY-b5-LEs"/>
+                        <action selector="popScreen:" destination="-1" eventType="touchUpInside" id="Kpo-ej-h47"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="r8O-Cw-RDV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="1" id="0JB-85-9cu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r8O-Cw-RDV" secondAttribute="trailing" constant="314" id="Dlt-8a-wVK"/>
-                <constraint firstItem="r8O-Cw-RDV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="29" id="b3f-zY-AYB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="r8O-Cw-RDV" secondAttribute="bottom" constant="723" id="tNO-pA-UyN"/>
+                <constraint firstItem="l4V-xV-kAi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="1xb-dZ-Mno"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l4V-xV-kAi" secondAttribute="trailing" constant="30" id="2ud-Sb-g27"/>
+                <constraint firstItem="gTU-jv-HJZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="3CP-Fk-ClT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GCA-U8-fNK" secondAttribute="trailing" constant="30" id="41b-Zw-rb5"/>
+                <constraint firstItem="GCA-U8-fNK" firstAttribute="centerY" secondItem="hlg-BK-PQ4" secondAttribute="centerY" id="AIz-BU-Vp3"/>
+                <constraint firstItem="SgO-t8-7mK" firstAttribute="centerY" secondItem="hlg-BK-PQ4" secondAttribute="centerY" id="Gnh-WT-gQs"/>
+                <constraint firstItem="CHz-yc-rKz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L6S-vm-Ptr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dkS-UE-7Mz" secondAttribute="trailing" constant="30" id="Mgy-8U-HYv"/>
+                <constraint firstItem="hlg-BK-PQ4" firstAttribute="leading" secondItem="SgO-t8-7mK" secondAttribute="trailing" constant="10" id="NPi-m2-TJ8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sfD-Gh-qkA" secondAttribute="bottom" constant="20" id="OtQ-kl-lSy"/>
+                <constraint firstItem="gTU-jv-HJZ" firstAttribute="top" secondItem="l4V-xV-kAi" secondAttribute="bottom" constant="10" id="Ozq-yk-yyN"/>
+                <constraint firstItem="sfD-Gh-qkA" firstAttribute="trailing" secondItem="YDa-7t-VRA" secondAttribute="trailing" id="QWM-Wh-McN"/>
+                <constraint firstItem="r12-Ry-kgh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="SpC-dZ-kys"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r12-Ry-kgh" secondAttribute="trailing" constant="30" id="V1G-We-PYS"/>
+                <constraint firstItem="hlg-BK-PQ4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VLC-oI-nYw"/>
+                <constraint firstItem="hlg-BK-PQ4" firstAttribute="top" secondItem="dkS-UE-7Mz" secondAttribute="bottom" constant="31" id="X58-il-AIc"/>
+                <constraint firstItem="irA-BK-Jgl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="XDm-ia-QhC"/>
+                <constraint firstItem="YDa-7t-VRA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="YIu-Op-HqB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gTU-jv-HJZ" secondAttribute="trailing" constant="30" id="ahe-wc-lCd"/>
+                <constraint firstItem="dkS-UE-7Mz" firstAttribute="top" secondItem="gTU-jv-HJZ" secondAttribute="bottom" constant="10" id="b1s-mz-a2w"/>
+                <constraint firstItem="sfD-Gh-qkA" firstAttribute="top" secondItem="irA-BK-Jgl" secondAttribute="top" id="bDH-h8-UvQ"/>
+                <constraint firstItem="sfD-Gh-qkA" firstAttribute="leading" secondItem="irA-BK-Jgl" secondAttribute="trailing" id="cdS-E2-UtH"/>
+                <constraint firstItem="dkS-UE-7Mz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="chU-xl-qae"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YDa-7t-VRA" secondAttribute="trailing" constant="30" id="d85-uN-slO"/>
+                <constraint firstItem="SgO-t8-7mK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="dqa-QR-m2s"/>
+                <constraint firstItem="l4V-xV-kAi" firstAttribute="top" secondItem="r12-Ry-kgh" secondAttribute="bottom" constant="72" id="fTi-yu-RIZ"/>
+                <constraint firstItem="GCA-U8-fNK" firstAttribute="leading" secondItem="hlg-BK-PQ4" secondAttribute="trailing" constant="10" id="gjt-9g-RSJ"/>
+                <constraint firstItem="sfD-Gh-qkA" firstAttribute="centerY" secondItem="irA-BK-Jgl" secondAttribute="centerY" id="itA-WS-YOm"/>
+                <constraint firstItem="r12-Ry-kgh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="itV-YZ-pKO"/>
+                <constraint firstItem="YDa-7t-VRA" firstAttribute="top" secondItem="hlg-BK-PQ4" secondAttribute="bottom" constant="81" id="n4Q-Wo-ErU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="irA-BK-Jgl" secondAttribute="trailing" constant="140" id="qHY-cT-Ug2"/>
+                <constraint firstItem="CHz-yc-rKz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r3x-ex-Nk7"/>
+                <constraint firstItem="irA-BK-Jgl" firstAttribute="top" secondItem="YDa-7t-VRA" secondAttribute="bottom" constant="64" id="rna-v8-hj6"/>
             </constraints>
-            <point key="canvasLocation" x="65" y="-11"/>
+            <point key="canvasLocation" x="60.869565217391312" y="-12.723214285714285"/>
         </view>
     </objects>
     <resources>
+        <image name="AppleLogo" width="40" height="40"/>
+        <image name="FacebookLogo" width="40" height="40"/>
+        <image name="GoogleLogo" width="40" height="40"/>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
