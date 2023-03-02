@@ -51,6 +51,15 @@
 		BF5E7E3F91983300ADDB4704 /* TapableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C5ABF906A1F207F7800D0 /* TapableView.swift */; };
 		C220C12FFB9D24CAB16E049F /* Pods_HeliaHotelBooking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E752DD16D2B5A5C7B877AA8 /* Pods_HeliaHotelBooking.framework */; };
 		C4A1948987280EE0F7714EF1 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA6FF251823B3CC19E17643 /* CalendarExtensions.swift */; };
+		C812D77229B05F7E007A004C /* ConfirmDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812D77129B05F7E007A004C /* ConfirmDialogView.swift */; };
+		C812D77429B05F84007A004C /* ConfirmDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C812D77329B05F84007A004C /* ConfirmDialogView.xib */; };
+		C812D78129B05FBA007A004C /* Outfit-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C812D77729B05FBA007A004C /* Outfit-SemiBold.otf */; };
+		C812D78229B05FBA007A004C /* Outfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812D77829B05FBA007A004C /* Outfit.swift */; };
+		C812D78329B05FBA007A004C /* Outfit-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C812D77929B05FBA007A004C /* Outfit-Regular.otf */; };
+		C812D78429B05FBA007A004C /* Outfit-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = C812D77A29B05FBA007A004C /* Outfit-Bold.otf */; };
+		C812D78529B05FBA007A004C /* Outfit-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = C812D77B29B05FBA007A004C /* Outfit-Light.otf */; };
+		C812D78629B05FBA007A004C /* Outfit-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = C812D77C29B05FBA007A004C /* Outfit-Medium.otf */; };
+		C812D78729B05FBA007A004C /* BaseFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C812D77D29B05FBA007A004C /* BaseFont.swift */; };
 		C87AD7D129AE0B9A0023C084 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C87AD7D029AE0B9A0023C084 /* Launch Screen.storyboard */; };
 		D1959D755CCC53D26570C3DE /* CLPlacemarkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F596A108C5EA1476A6B27B /* CLPlacemarkExtensions.swift */; };
 		DBC20E108226644FC53FBA05 /* CMTimeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC08B251C5293177AF4827D /* CMTimeExtensions.swift */; };
@@ -102,6 +111,15 @@
 		BC777F5CCDD352C9C05A0C5D /* URLRequestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestExtensions.swift; sourceTree = "<group>"; };
 		BC9EE928BB52F9F73D4CC476 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		C7141CED3B1073949CC31AB8 /* Pods-HeliaHotelBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeliaHotelBooking.debug.xcconfig"; path = "Target Support Files/Pods-HeliaHotelBooking/Pods-HeliaHotelBooking.debug.xcconfig"; sourceTree = "<group>"; };
+		C812D77129B05F7E007A004C /* ConfirmDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDialogView.swift; sourceTree = "<group>"; };
+		C812D77329B05F84007A004C /* ConfirmDialogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmDialogView.xib; sourceTree = "<group>"; };
+		C812D77729B05FBA007A004C /* Outfit-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-SemiBold.otf"; sourceTree = "<group>"; };
+		C812D77829B05FBA007A004C /* Outfit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Outfit.swift; sourceTree = "<group>"; };
+		C812D77929B05FBA007A004C /* Outfit-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Regular.otf"; sourceTree = "<group>"; };
+		C812D77A29B05FBA007A004C /* Outfit-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Bold.otf"; sourceTree = "<group>"; };
+		C812D77B29B05FBA007A004C /* Outfit-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Light.otf"; sourceTree = "<group>"; };
+		C812D77C29B05FBA007A004C /* Outfit-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Medium.otf"; sourceTree = "<group>"; };
+		C812D77D29B05FBA007A004C /* BaseFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFont.swift; sourceTree = "<group>"; };
 		C87AD7D029AE0B9A0023C084 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C9614DE2BE21C0452DC982BA /* DeviceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceExtensions.swift; sourceTree = "<group>"; };
 		CC6FDD61DD0415BAD8451303 /* CGPointExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
@@ -177,6 +195,8 @@
 		B190BE6B101743E768EAE4E7 /* CommonView */ = {
 			isa = PBXGroup;
 			children = (
+				C812D77129B05F7E007A004C /* ConfirmDialogView.swift */,
+				C812D77029B05F74007A004C /* Xib */,
 				04872D84B60B1A8EF83198EC /* PaddingTextField.swift */,
 				BC9EE928BB52F9F73D4CC476 /* PasswordTextField.swift */,
 				F473C996E3CE865CAFC8C91E /* SolarTextField.swift */,
@@ -188,11 +208,42 @@
 		B6ED10E16EEAD441B38D01FA /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C812D77529B05FBA007A004C /* Fonts */,
 				7B3368A80855F8D3D61D0BD1 /* AppDelegate.swift */,
 				50D3BBB062572EA8226E8BA0 /* Assets.xcassets */,
 				7E4F331900AA70802614FC46 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C812D77029B05F74007A004C /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				C812D77329B05F84007A004C /* ConfirmDialogView.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+		C812D77529B05FBA007A004C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C812D77629B05FBA007A004C /* Outfit */,
+				C812D77D29B05FBA007A004C /* BaseFont.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C812D77629B05FBA007A004C /* Outfit */ = {
+			isa = PBXGroup;
+			children = (
+				C812D77729B05FBA007A004C /* Outfit-SemiBold.otf */,
+				C812D77829B05FBA007A004C /* Outfit.swift */,
+				C812D77929B05FBA007A004C /* Outfit-Regular.otf */,
+				C812D77A29B05FBA007A004C /* Outfit-Bold.otf */,
+				C812D77B29B05FBA007A004C /* Outfit-Light.otf */,
+				C812D77C29B05FBA007A004C /* Outfit-Medium.otf */,
+			);
+			path = Outfit;
 			sourceTree = "<group>";
 		};
 		C884853D199CD9A3B4C89D1C /* Extensions */ = {
@@ -319,6 +370,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ACF1CFC9AE119E4D4E57018 /* Assets.xcassets in Resources */,
+				C812D78629B05FBA007A004C /* Outfit-Medium.otf in Resources */,
+				C812D78129B05FBA007A004C /* Outfit-SemiBold.otf in Resources */,
+				C812D77429B05F84007A004C /* ConfirmDialogView.xib in Resources */,
+				C812D78529B05FBA007A004C /* Outfit-Light.otf in Resources */,
+				C812D78429B05FBA007A004C /* Outfit-Bold.otf in Resources */,
+				C812D78329B05FBA007A004C /* Outfit-Regular.otf in Resources */,
 				C87AD7D129AE0B9A0023C084 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +450,7 @@
 				D1959D755CCC53D26570C3DE /* CLPlacemarkExtensions.swift in Sources */,
 				DBC20E108226644FC53FBA05 /* CMTimeExtensions.swift in Sources */,
 				C4A1948987280EE0F7714EF1 /* CalendarExtensions.swift in Sources */,
+				C812D78229B05FBA007A004C /* Outfit.swift in Sources */,
 				6F5C37A69114804004AC8704 /* CollectionViewExtensions.swift in Sources */,
 				6469BE2D509FAA49F4072B06 /* ColorExtensions.swift in Sources */,
 				4FBDCB82D31F693CE7C83DF0 /* DateExtensions.swift in Sources */,
@@ -400,6 +458,7 @@
 				A45C7CD852B900F3E198106F /* DictionaryExtension.swift in Sources */,
 				4A992AFBA61F41A2507FBFE0 /* DoubleExtensions.swift in Sources */,
 				80F04F9A4BDC80465A2EBBAA /* FileManagerExtensions.swift in Sources */,
+				C812D77229B05F7E007A004C /* ConfirmDialogView.swift in Sources */,
 				81A97541A83F8E0775A1DB8A /* FloatExtensions.swift in Sources */,
 				E620D75451D07193ED2B996B /* FontExtensions.swift in Sources */,
 				64038092B467F3BDC9995015 /* IntExtensions.swift in Sources */,
@@ -418,6 +477,7 @@
 				B3E1E65F3C65C10975D859EA /* UIViewControllerExtensions.swift in Sources */,
 				49A100C349A17D31AC6D867E /* UIViewExtensions.swift in Sources */,
 				A69D9118A7DA530BB32A6D97 /* URLExtensions.swift in Sources */,
+				C812D78729B05FBA007A004C /* BaseFont.swift in Sources */,
 				709776101FD1AD0A419B23CC /* URLRequestExtensions.swift in Sources */,
 				B464FF3DC689361A87418A40 /* UserDefaultExtensions.swift in Sources */,
 			);

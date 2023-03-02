@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Bold.otf">
+            <string>Outfit-Bold</string>
+        </array>
+        <array key="Outfit-SemiBold.otf">
+            <string>Outfit-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ConfirmDialogView" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyf-bu-qoN" userLabel="Background View">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="labelColor"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axz-MH-etg">
+                    <rect key="frame" x="0.0" y="626" width="414" height="270"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPV-fH-5oF">
+                            <rect key="frame" x="172" y="16" width="70" height="23.5"/>
+                            <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="22"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to log out?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I6W-1K-XdO">
+                            <rect key="frame" x="72" y="59.5" width="270" height="19.5"/>
+                            <fontDescription key="fontDescription" name="Outfit-Bold" family="Outfit" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wG3-KS-Gsy" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="16" y="99" width="382" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes, Logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKE-qm-wlN">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
+                                    <color key="backgroundColor" red="0.10588235294117647" green="0.71372549019607845" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="qKE-qm-wlN" secondAttribute="trailing" id="5PL-SU-3SJ"/>
+                                <constraint firstItem="qKE-qm-wlN" firstAttribute="leading" secondItem="wG3-KS-Gsy" secondAttribute="leading" id="QFn-z5-Hu3"/>
+                                <constraint firstAttribute="bottom" secondItem="qKE-qm-wlN" secondAttribute="bottom" id="Tsz-F9-HwX"/>
+                                <constraint firstItem="qKE-qm-wlN" firstAttribute="top" secondItem="wG3-KS-Gsy" secondAttribute="top" id="ckO-I0-c9J"/>
+                                <constraint firstAttribute="height" constant="45" id="sIw-rE-awR"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="taR-Ee-DLW" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="16" y="164" width="382" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-QG-WoR">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
+                                    <color key="backgroundColor" red="0.90980392156862744" green="0.97254901960784312" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="17"/>
+                                    <color key="textColor" red="0.20000000000000001" green="0.74509803921568629" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="fd4-QG-WoR" secondAttribute="bottom" id="8CG-VW-oNl"/>
+                                <constraint firstAttribute="trailing" secondItem="fd4-QG-WoR" secondAttribute="trailing" id="DQQ-kJ-H8e"/>
+                                <constraint firstItem="fd4-QG-WoR" firstAttribute="leading" secondItem="taR-Ee-DLW" secondAttribute="leading" id="bFi-hz-PyT"/>
+                                <constraint firstAttribute="height" constant="45" id="ge6-vY-o0D"/>
+                                <constraint firstItem="fd4-QG-WoR" firstAttribute="top" secondItem="taR-Ee-DLW" secondAttribute="top" id="yBl-kD-n6c"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="wG3-KS-Gsy" secondAttribute="trailing" constant="16" id="333-5w-NRW"/>
+                        <constraint firstAttribute="height" constant="270" id="8Ib-a0-H82"/>
+                        <constraint firstItem="taR-Ee-DLW" firstAttribute="top" secondItem="wG3-KS-Gsy" secondAttribute="bottom" constant="20" id="Jvn-cx-asW"/>
+                        <constraint firstItem="wG3-KS-Gsy" firstAttribute="leading" secondItem="axz-MH-etg" secondAttribute="leading" constant="16" id="Ony-bh-kCM"/>
+                        <constraint firstItem="I6W-1K-XdO" firstAttribute="centerX" secondItem="axz-MH-etg" secondAttribute="centerX" id="U0a-cQ-JHJ"/>
+                        <constraint firstAttribute="trailing" secondItem="taR-Ee-DLW" secondAttribute="trailing" constant="16" id="Wh0-xP-9yb"/>
+                        <constraint firstItem="taR-Ee-DLW" firstAttribute="leading" secondItem="axz-MH-etg" secondAttribute="leading" constant="16" id="a8f-cA-EuU"/>
+                        <constraint firstItem="wG3-KS-Gsy" firstAttribute="top" secondItem="I6W-1K-XdO" secondAttribute="bottom" constant="20" id="ik0-PY-ssE"/>
+                        <constraint firstItem="qPV-fH-5oF" firstAttribute="centerX" secondItem="axz-MH-etg" secondAttribute="centerX" id="mdI-YD-vFk"/>
+                        <constraint firstItem="I6W-1K-XdO" firstAttribute="top" secondItem="qPV-fH-5oF" secondAttribute="bottom" constant="20" id="qfJ-lA-LYe"/>
+                        <constraint firstItem="qPV-fH-5oF" firstAttribute="top" secondItem="axz-MH-etg" secondAttribute="top" constant="16" id="sl0-yo-Xpn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fyf-bu-qoN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0wE-j9-1Cg"/>
+                <constraint firstAttribute="bottom" secondItem="axz-MH-etg" secondAttribute="bottom" id="8Wc-nb-RWX"/>
+                <constraint firstAttribute="trailing" secondItem="fyf-bu-qoN" secondAttribute="trailing" id="HbA-Pc-8lS"/>
+                <constraint firstItem="axz-MH-etg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="U2M-DC-huz"/>
+                <constraint firstAttribute="bottom" secondItem="fyf-bu-qoN" secondAttribute="bottom" id="l9t-VA-S6H"/>
+                <constraint firstItem="axz-MH-etg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="qmN-Z0-EoQ"/>
+                <constraint firstItem="fyf-bu-qoN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qtg-61-xGd"/>
+            </constraints>
+            <connections>
+                <outlet property="backgroundView" destination="fyf-bu-qoN" id="HsK-Jn-WU3"/>
+                <outlet property="cancelButton" destination="taR-Ee-DLW" id="2vt-Kn-Ayb"/>
+                <outlet property="containerView" destination="axz-MH-etg" id="0IN-kI-pau"/>
+                <outlet property="yesButton" destination="wG3-KS-Gsy" id="crS-tf-SUA"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
