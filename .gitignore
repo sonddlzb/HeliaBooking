@@ -1,4 +1,4 @@
-*.xcodeproj/
+/*.xcodeproj
 *.xcworkspace/
 *.DS_Store
 Pods/
