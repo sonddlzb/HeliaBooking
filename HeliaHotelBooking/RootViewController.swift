@@ -11,6 +11,6 @@ class RootViewController: BaseViewControler {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello world")
+        navigationController?.pushViewController(IntroductionViewController(), animated: true)
     }
 }

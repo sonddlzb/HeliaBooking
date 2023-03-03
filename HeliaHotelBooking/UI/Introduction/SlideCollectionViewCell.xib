@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="slide" id="gTV-IL-0wX" customClass="SlideCollectionViewCell" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="471" height="779"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="471" height="779"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9p5-zl-u0S">
+                        <rect key="frame" x="0.0" y="0.0" width="471" height="779"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="travel1" translatesAutoresizingMaskIntoConstraints="NO" id="rWe-Yr-Cpx">
+                                <rect key="frame" x="0.0" y="0.0" width="471" height="591"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Travel safely, comfortably, &amp; easily" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gE2-I7-bYC">
+                                <rect key="frame" x="0.0" y="607" width="471" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="6Ie-ca-nef"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ternpor incididunt ut labore et dolore magna aliqua" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3Y-VR-qN4">
+                                <rect key="frame" x="8" y="662" width="455" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="s3Y-VR-qN4" secondAttribute="trailing" constant="8" id="6Jy-4f-yc7"/>
+                            <constraint firstItem="gE2-I7-bYC" firstAttribute="top" secondItem="rWe-Yr-Cpx" secondAttribute="bottom" constant="16" id="6o4-Ml-7vk"/>
+                            <constraint firstAttribute="bottom" secondItem="rWe-Yr-Cpx" secondAttribute="bottom" constant="188" id="7rp-EG-QPu"/>
+                            <constraint firstItem="s3Y-VR-qN4" firstAttribute="leading" secondItem="9p5-zl-u0S" secondAttribute="leading" constant="8" id="9eW-gb-k4h"/>
+                            <constraint firstAttribute="trailing" secondItem="s3Y-VR-qN4" secondAttribute="trailing" constant="8" id="Emn-lM-CvL"/>
+                            <constraint firstItem="gE2-I7-bYC" firstAttribute="trailing" secondItem="rWe-Yr-Cpx" secondAttribute="trailing" id="Vhg-R3-lqb"/>
+                            <constraint firstItem="rWe-Yr-Cpx" firstAttribute="leading" secondItem="9p5-zl-u0S" secondAttribute="leading" id="YeP-sZ-f6A"/>
+                            <constraint firstItem="s3Y-VR-qN4" firstAttribute="leading" secondItem="9p5-zl-u0S" secondAttribute="leading" constant="8" id="de5-SA-TKg"/>
+                            <constraint firstItem="s3Y-VR-qN4" firstAttribute="top" secondItem="gE2-I7-bYC" secondAttribute="bottom" constant="8" symbolic="YES" id="i0y-nR-S6x"/>
+                            <constraint firstAttribute="trailing" secondItem="rWe-Yr-Cpx" secondAttribute="trailing" id="iBk-Bv-F26"/>
+                            <constraint firstItem="rWe-Yr-Cpx" firstAttribute="top" secondItem="9p5-zl-u0S" secondAttribute="top" id="lrP-1K-qtr"/>
+                            <constraint firstItem="gE2-I7-bYC" firstAttribute="leading" secondItem="rWe-Yr-Cpx" secondAttribute="leading" id="qf9-Fv-iz5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="9p5-zl-u0S" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="7lg-jS-nQd"/>
+                <constraint firstAttribute="bottom" secondItem="9p5-zl-u0S" secondAttribute="bottom" id="XC7-96-MzS"/>
+                <constraint firstAttribute="trailing" secondItem="9p5-zl-u0S" secondAttribute="trailing" id="lpt-Fl-jV2"/>
+                <constraint firstItem="9p5-zl-u0S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qrK-Jp-lfE"/>
+            </constraints>
+            <size key="customSize" width="471" height="779"/>
+            <connections>
+                <outlet property="imageIntro" destination="rWe-Yr-Cpx" id="Wfz-4q-us4"/>
+                <outlet property="labelContent" destination="s3Y-VR-qN4" id="N7W-5f-zin"/>
+                <outlet property="labelTitle" destination="gE2-I7-bYC" id="Bq5-JP-mLs"/>
+            </connections>
+            <point key="canvasLocation" x="318.32061068702291" y="245.42253521126761"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="travel1" width="275" height="183"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
