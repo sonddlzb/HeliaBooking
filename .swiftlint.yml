@@ -1,0 +1,5 @@
+included:
+  - HeliaHotelBooking
+
+excluded:
+  - Pods
