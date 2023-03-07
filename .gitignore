@@ -1,5 +1,6 @@
 /*.xcodeproj
 *.xcworkspace/
 *.DS_Store
+*.generated.swift
 Pods/
 xcuserdata
