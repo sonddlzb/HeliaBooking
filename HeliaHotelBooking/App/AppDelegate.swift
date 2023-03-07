@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseCore
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,7 +21,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = BaseNavigationController(rootViewController: RootViewController())
         window?.rootViewController = navigationController // Your initial view controller.
         window?.makeKeyAndVisible()
+
+        self.config()
         return true
+    }
+
+    func config() {
+        self.configFirebase()
+    }
+
+    func configFirebase() {
+        FirebaseApp.configure()
+    }
+
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
     }
 
 }

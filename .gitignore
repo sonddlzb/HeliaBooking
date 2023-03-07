@@ -3,4 +3,5 @@
 *.DS_Store
 *.generated.swift
 Pods/
+*.generated.swift
 xcuserdata
