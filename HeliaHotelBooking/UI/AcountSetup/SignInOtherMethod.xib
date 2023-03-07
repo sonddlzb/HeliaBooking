@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="DSj-nE-JLF">
+            <view key="view" contentMode="scaleToFill" id="MVP-8g-oqM">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Tu-wJ-337">
+                        <rect key="frame" x="0.0" y="570" width="393" height="61"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oao-rP-599">
+                                <rect key="frame" x="266" y="31.333333333333371" width="115" height="5"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="Xfn-eJ-vRy"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or continue with" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYr-RC-Skd">
+                                <rect key="frame" x="135" y="20" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXD-AY-ekF">
+                                <rect key="frame" x="12" y="31.333333333333371" width="115" height="5"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="8nc-OB-x4y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UYr-RC-Skd" firstAttribute="centerX" secondItem="1Tu-wJ-337" secondAttribute="centerX" id="1Km-zf-vnK"/>
+                            <constraint firstItem="UYr-RC-Skd" firstAttribute="centerY" secondItem="1Tu-wJ-337" secondAttribute="centerY" id="54r-Vp-ZaU"/>
+                            <constraint firstItem="oao-rP-599" firstAttribute="leading" secondItem="UYr-RC-Skd" secondAttribute="trailing" constant="8" id="Ngk-oJ-USv"/>
+                            <constraint firstAttribute="height" constant="61" id="TJw-ny-8XU"/>
+                            <constraint firstItem="nXD-AY-ekF" firstAttribute="leading" secondItem="1Tu-wJ-337" secondAttribute="leading" constant="12" id="YUR-Ue-fcy"/>
+                            <constraint firstItem="nXD-AY-ekF" firstAttribute="baseline" secondItem="UYr-RC-Skd" secondAttribute="firstBaseline" id="hqr-Vx-ef8"/>
+                            <constraint firstItem="oao-rP-599" firstAttribute="baseline" secondItem="UYr-RC-Skd" secondAttribute="firstBaseline" id="mr8-om-KXC"/>
+                            <constraint firstAttribute="trailing" secondItem="oao-rP-599" secondAttribute="trailing" constant="12" id="rB7-6Z-BPu"/>
+                            <constraint firstItem="UYr-RC-Skd" firstAttribute="leading" secondItem="nXD-AY-ekF" secondAttribute="trailing" constant="8" id="rcB-bI-xnG"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="biI-eL-Aj6" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                        <rect key="frame" x="16" y="639" width="80" height="80"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FacebookLogo" translatesAutoresizingMaskIntoConstraints="NO" id="D6o-Q3-1wL">
+                                <rect key="frame" x="10" y="10" width="60" height="60"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D6o-Q3-1wL" firstAttribute="leading" secondItem="biI-eL-Aj6" secondAttribute="leading" constant="10" id="0XF-D2-U6F"/>
+                            <constraint firstAttribute="height" constant="80" id="Cmc-7z-pN2"/>
+                            <constraint firstAttribute="bottom" secondItem="D6o-Q3-1wL" secondAttribute="bottom" constant="10" id="LgK-gO-uI8"/>
+                            <constraint firstAttribute="width" constant="80" id="gwW-xI-zmt"/>
+                            <constraint firstItem="D6o-Q3-1wL" firstAttribute="top" secondItem="biI-eL-Aj6" secondAttribute="top" constant="10" id="noq-wq-mHy"/>
+                            <constraint firstAttribute="trailing" secondItem="D6o-Q3-1wL" secondAttribute="trailing" constant="10" id="xGf-GV-7hh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="leK-a3-WNT"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="leK-a3-WNT" firstAttribute="bottom" secondItem="1Tu-wJ-337" secondAttribute="bottom" constant="187" id="0bQ-Fx-bPC"/>
+                    <constraint firstItem="1Tu-wJ-337" firstAttribute="leading" secondItem="MVP-8g-oqM" secondAttribute="leading" id="XlO-Xx-ucE"/>
+                    <constraint firstAttribute="trailing" secondItem="1Tu-wJ-337" secondAttribute="trailing" id="n2m-9x-rdB"/>
+                    <constraint firstItem="biI-eL-Aj6" firstAttribute="leading" secondItem="leK-a3-WNT" secondAttribute="leading" constant="16" id="oo8-X9-Wdj"/>
+                    <constraint firstItem="biI-eL-Aj6" firstAttribute="top" secondItem="1Tu-wJ-337" secondAttribute="bottom" constant="8" id="yV0-fo-e9x"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-144.27480916030532" y="-33.098591549295776"/>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="FacebookLogo" width="40" height="40"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
