@@ -35,8 +35,8 @@ class PasswordTextField: SolarTextField {
         self.rightButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.rightButton)
 
-        self.rightTextFieldConstrant.isActive = false
-        self.rightButtonConstraint = self.rightButton.rightAnchor.constraint(equalTo: self.rightAnchor)
+        self.rightTextFieldConstrant.isActive = true
+        self.rightButtonConstraint = self.rightButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -6)
         NSLayoutConstraint.activate([
             self.rightButton.widthAnchor.constraint(equalToConstant: 30),
             self.rightButton.heightAnchor.constraint(equalToConstant: 30),
