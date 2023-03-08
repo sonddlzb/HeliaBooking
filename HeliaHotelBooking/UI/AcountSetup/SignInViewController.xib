@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -255,15 +255,6 @@
                         <action selector="facebookLoginAction:" destination="-1" eventType="touchUpInside" id="CQf-uY-2wi"/>
                     </connections>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHz-yc-rKz">
-                    <rect key="frame" x="20" y="44" width="20.5" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="1"/>
-                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="." image="arrow.backward" catalog="system"/>
-                    <connections>
-                        <action selector="popScreen:" destination="-1" eventType="touchUpInside" id="Kpo-ej-h47"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -274,7 +265,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GCA-U8-fNK" secondAttribute="trailing" constant="30" id="41b-Zw-rb5"/>
                 <constraint firstItem="GCA-U8-fNK" firstAttribute="centerY" secondItem="hlg-BK-PQ4" secondAttribute="centerY" id="AIz-BU-Vp3"/>
                 <constraint firstItem="SgO-t8-7mK" firstAttribute="centerY" secondItem="hlg-BK-PQ4" secondAttribute="centerY" id="Gnh-WT-gQs"/>
-                <constraint firstItem="CHz-yc-rKz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L6S-vm-Ptr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dkS-UE-7Mz" secondAttribute="trailing" constant="30" id="Mgy-8U-HYv"/>
                 <constraint firstItem="hlg-BK-PQ4" firstAttribute="leading" secondItem="SgO-t8-7mK" secondAttribute="trailing" constant="10" id="NPi-m2-TJ8"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sfD-Gh-qkA" secondAttribute="bottom" constant="20" id="OtQ-kl-lSy"/>
@@ -299,7 +289,6 @@
                 <constraint firstItem="r12-Ry-kgh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="itV-YZ-pKO"/>
                 <constraint firstItem="YDa-7t-VRA" firstAttribute="top" secondItem="hlg-BK-PQ4" secondAttribute="bottom" constant="81" id="n4Q-Wo-ErU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="irA-BK-Jgl" secondAttribute="trailing" constant="140" id="qHY-cT-Ug2"/>
-                <constraint firstItem="CHz-yc-rKz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r3x-ex-Nk7"/>
                 <constraint firstItem="irA-BK-Jgl" firstAttribute="top" secondItem="YDa-7t-VRA" secondAttribute="bottom" constant="64" id="rna-v8-hj6"/>
             </constraints>
             <point key="canvasLocation" x="60.869565217391312" y="-12.723214285714285"/>
@@ -309,7 +298,6 @@
         <image name="AppleLogo" width="40" height="40"/>
         <image name="FacebookLogo" width="40" height="40"/>
         <image name="GoogleLogo" width="40" height="40"/>
-        <image name="arrow.backward" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
