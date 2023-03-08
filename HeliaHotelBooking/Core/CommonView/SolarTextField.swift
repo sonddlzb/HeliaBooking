@@ -11,6 +11,7 @@ import UIKit
     func solarTextField(_ textField: SolarTextField, willChangeToText text: String) -> Bool
     @objc optional func solarTextFieldShouldReturn(_ textField: SolarTextField) -> Bool
     @objc optional func solarTextField(addTextFieldChangedValueObserverTo textField: PaddingTextField)
+    @objc optional func solarTextFieldDidChangeValue(_ textField: SolarTextField)
 }
 
 class SolarTextField: UIView {
@@ -113,6 +114,7 @@ class SolarTextField: UIView {
         textField.keyboardType = .alphabet
         textField.returnKeyType = .done
         textField.attributedPlaceholder = self.attributedPlaceholder(for: self.textField.placeholder ?? "")
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
 
     // MARK: - Dynamic function
@@ -142,6 +144,10 @@ class SolarTextField: UIView {
         if self.isEditing {
             self.becomeFirstResponder()
         }
+    }
+
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        self.delegate?.solarTextFieldDidChangeValue?(self)
     }
 
     // MARK: - Helper
