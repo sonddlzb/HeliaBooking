@@ -37,6 +37,7 @@ extension SignInViewController: FacebookSignInDelegate {
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
         //return home
         print("successfully")
+    }
 }
 
 // MARK: - GoogleSignInManagerDelegate

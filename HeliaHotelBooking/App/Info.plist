@@ -13,12 +13,10 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-			<key>CFBundleURLName</key>
-			<string></string>
-			<key>CFBundleURLSchemes</key>
-			<array>
+				<string>fb927589698276250</string>
+				<string>CFBundleURLName</string>
 				<string>com.googleusercontent.apps.603938658114-ice9qbp4lb2ctfvuurg32u6ni28q9lf4</string>
-                <string>fb927589698276250</string>
+				<string>CFBundleURLSchemes</string>
 			</array>
 		</dict>
 	</array>
