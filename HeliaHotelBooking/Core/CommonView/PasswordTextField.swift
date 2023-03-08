@@ -15,8 +15,6 @@ class PasswordTextField: SolarTextField {
     }
 
     // MARK: - UI
-    private var rightButton: UIButton!
-    private var rightButtonConstraint: NSLayoutConstraint!
 
     // MARK: - Config
     override func commonInit() {
@@ -26,24 +24,6 @@ class PasswordTextField: SolarTextField {
 
     override func configTextField() {
         super.configTextField()
-        self.configRightButton()
-    }
-
-    private func configRightButton() {
-        self.rightButton = UIButton()
-        self.rightButton.addTarget(self, action: #selector(rightViewDidTap), for: .touchUpInside)
-        self.rightButton.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(self.rightButton)
-
-        self.rightTextFieldConstrant.isActive = true
-        self.rightButtonConstraint = self.rightButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -6)
-        NSLayoutConstraint.activate([
-            self.rightButton.widthAnchor.constraint(equalToConstant: 30),
-            self.rightButton.heightAnchor.constraint(equalToConstant: 30),
-            self.rightButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.rightButton.leftAnchor.constraint(equalTo: self.textField.rightAnchor, constant: 5),
-            self.rightButtonConstraint
-        ])
     }
 
     // MARK: - Override
@@ -57,7 +37,7 @@ class PasswordTextField: SolarTextField {
         self.textField.attributedPlaceholder = self.attributedPlaceholder(for: self.textField.placeholder ?? "")
     }
 
-    @objc private func rightViewDidTap() {
+    override func handleRightButtonDidTap() {
         self.isSecureText = !self.isSecureText
     }
 
