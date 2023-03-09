@@ -25,7 +25,7 @@ class SignInViewController: UIViewController {
     }
 
     @IBAction func didTapSignUp(_ sender: Any) {
-        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
+//        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
 
     @IBAction func didTapSignInWithGoogle(_ sender: TapableView) {
