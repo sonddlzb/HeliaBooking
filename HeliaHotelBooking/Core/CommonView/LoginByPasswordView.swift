@@ -9,6 +9,7 @@ import UIKit
 
 private struct Const {
     static let leftPadding = 12.0
+    static let rightPadding = -50.0
 }
 
 protocol LoginByPasswordViewDelegate: AnyObject {
@@ -100,8 +101,10 @@ class LoginByPasswordView: UIView {
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Login to your Account"
+        titleLabel.numberOfLines = 2
+        titleLabel.lineBreakMode = .byWordWrapping
         titleLabel.textColor = .black
-        titleLabel.font = Outfit.boldFont(size: 30)
+        titleLabel.font = Outfit.boldFont(size: 40)
         titleLabel.textAlignment = .left
         return titleLabel
     }()
@@ -158,6 +161,7 @@ class LoginByPasswordView: UIView {
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.containerView.topAnchor),
             self.titleLabel.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: Const.leftPadding),
+            self.titleLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: Const.rightPadding),
 
             self.emailTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 40.0),
             self.emailTextField.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: Const.leftPadding),

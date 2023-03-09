@@ -15,16 +15,13 @@ class SignInViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func popScreen(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-
     @IBAction func facebookLoginAction(_ sender: Any) {
         FacebookSignInManager.shared.delegate = self
         FacebookSignInManager.shared.signIn(withPresenting: self)
     }
 
     @IBAction func signInWithPasswordAction(_ sender: Any) {
+        navigationController?.pushViewController(SignInWithPassWordViewController(), animated: true)
     }
     
     @IBAction func didTapSignInWithGoogle(_ sender: TapableView) {
@@ -35,7 +32,6 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: FacebookSignInDelegate {
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
-        //return home
         print("successfully")
     }
 }
