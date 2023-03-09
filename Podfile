@@ -13,5 +13,8 @@ target 'HeliaHotelBooking' do
   pod 'FacebookLogin'
   pod 'GoogleSignIn'
   pod 'DropDown'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
+  pod 'SVProgressHUD' 
 
 end

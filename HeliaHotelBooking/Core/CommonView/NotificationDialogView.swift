@@ -1,5 +1,5 @@
 //
-//  CancelNotificationDialogView.swift
+//  NotificationDialogView.swift
 //  TestCustomView
 //
 //  Created by đào sơn on 02/03/2023.
@@ -7,19 +7,38 @@
 
 import UIKit
 
-class CancelNotificationDialogView: UIView {
+protocol NotificationDialogViewDelegate: AnyObject {
+    func notificationDialogViewDidTapOk(_ notificationDialogView: NotificationDialogView)
+}
+
+class NotificationDialogView: UIView {
 
     // MARK: - Outlets
     @IBOutlet private weak var containerView: UIView!
     @IBOutlet private weak var backgroundView: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var messageLabel: UILabel!
 
-    static func loadView() -> CancelNotificationDialogView {
-        return CancelNotificationDialogView.loadView(fromNib: "CancelNotificationDialogView")!
+    static func loadView() -> NotificationDialogView {
+        return NotificationDialogView.loadView(fromNib: "NotificationDialogView")!
     }
+
+    weak var delegate: NotificationDialogViewDelegate?
 
     // MARK: - Public method
     func show(in view: UIView) {
         self.alpha = 0
+        view.addSubview(self)
+        self.fitSuperviewConstraint()
+        UIView.animate(withDuration: 0.25) {
+            self.alpha = 1
+        }
+    }
+
+    func show(in view: UIView, title: String, message: String) {
+        self.alpha = 0
+        self.titleLabel.text = title
+        self.messageLabel.text = message
         view.addSubview(self)
         self.fitSuperviewConstraint()
         UIView.animate(withDuration: 0.25) {
@@ -44,7 +63,7 @@ class CancelNotificationDialogView: UIView {
     }
 
     @IBAction func okButtonDidTap(_ sender: TapableView) {
+        self.delegate?.notificationDialogViewDidTapOk(self)
         self.dismiss()
     }
 }
-
