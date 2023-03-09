@@ -171,6 +171,52 @@ class SignUpViewController: UIViewController {
         }
     }
 
+    private func validateSignUpForm() -> Bool {
+        if !isFullNameValid() {
+            FailedDialog.show(title: "Failed to sign up new account", message: "Your Full Name must not be empty!")
+            return false
+        } else if !isNicknameValid() {
+            FailedDialog.show(title: "Failed to sign up new account", message: "Your Nickname must not be empty!")
+            return false
+        } else if !isDateOfBirthValid() {
+            FailedDialog.show(title: "Failed to sign up new account", message: "Your date of birth must be a valid date!")
+            return false
+        } else if !isPhoneNumberValid() {
+            FailedDialog.show(title: "Failed to sign up new account", message: "Your phone number is invalid!")
+            return false
+        } else if !isGenderValid() {
+            FailedDialog.show(title: "Failed to sign up new account", message: "Please select your gender!")
+            return false
+        }
+
+        return true
+    }
+
+    private func isFullNameValid() -> Bool {
+        return !self.fullNameTextField.text.isEmpty
+    }
+
+    private func isNicknameValid() -> Bool {
+        return !self.nicknameTextField.text.isEmpty
+    }
+
+    private func isDateOfBirthValid() -> Bool {
+        guard let dateOfBirth = self.dateOfBirthTextField.text.convertToDate() else {
+            return false
+        }
+
+        self.currentDate = dateOfBirth
+        return true
+    }
+
+    private func isPhoneNumberValid() -> Bool {
+        return self.phoneNumberTextField.text.first == "0" && self.phoneNumberTextField.text.count == 10
+    }
+
+    private func isGenderValid() -> Bool {
+        return !self.genderTextField.text.isEmpty
+    }
+
     @IBAction func didTapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -178,6 +224,14 @@ class SignUpViewController: UIViewController {
     @IBAction func didChangeCalendarValue(_ sender: Any) {
         self.currentDate = datePicker.date
         self.dateOfBirthTextField.text = self.currentDate.formatDate()
+    }
+
+    @IBAction func didTapContinueButton(_ sender: Any) {
+        if !self.validateSignUpForm() {
+            return
+        }
+
+        //handle call API to store data in Firebase
     }
 }
 
