@@ -62,6 +62,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>You can take photos to your avatar</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You can select photos to your avatar</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Outfit-Bold.otf</string>

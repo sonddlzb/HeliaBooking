@@ -23,7 +23,11 @@ class SignInViewController: UIViewController {
     @IBAction func signInWithPasswordAction(_ sender: Any) {
         navigationController?.pushViewController(SignInWithPassWordViewController(), animated: true)
     }
-    
+
+    @IBAction func didTapSignUp(_ sender: Any) {
+        self.navigationController?.pushViewController(SignUpViewController(), animated: true)
+    }
+
     @IBAction func didTapSignInWithGoogle(_ sender: TapableView) {
         GoogleSignInManager.shared.delegate = self
         GoogleSignInManager.shared.signIn(withPresenting: self)

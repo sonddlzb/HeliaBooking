@@ -12,6 +12,7 @@ import UIKit
     @objc optional func solarTextFieldShouldReturn(_ textField: SolarTextField) -> Bool
     @objc optional func solarTextField(addTextFieldChangedValueObserverTo textField: PaddingTextField)
     @objc optional func solarTextFieldDidChangeValue(_ textField: SolarTextField)
+    @objc optional func solarTextFieldDidTapRightButton(_ textField: SolarTextField)
 }
 
 class SolarTextField: UIView {
@@ -72,10 +73,18 @@ class SolarTextField: UIView {
         return self.textField.isEditing
     }
 
+    var isRightButtonEnable = false {
+        didSet {
+            self.rightButton.isHidden = !self.isRightButtonEnable
+        }
+    }
+
     var rightTextFieldConstrant: NSLayoutConstraint!
+    var rightButtonConstraint: NSLayoutConstraint!
 
     // MARK: - UI
     var textField = PaddingTextField()
+    var rightButton = UIButton()
 
     // MARK: - Init
     required init?(coder: NSCoder) {
@@ -102,6 +111,7 @@ class SolarTextField: UIView {
         ])
 
         self.configTextField()
+        self.configRightButton()
 
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActiveNotitication(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
@@ -115,6 +125,29 @@ class SolarTextField: UIView {
         textField.returnKeyType = .done
         textField.attributedPlaceholder = self.attributedPlaceholder(for: self.textField.placeholder ?? "")
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+
+    private func configRightButton() {
+        self.rightButton.addTarget(self, action: #selector(rightViewDidTap), for: .touchUpInside)
+        self.rightButton.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.rightButton)
+
+        self.rightTextFieldConstrant.isActive = false
+        self.rightButtonConstraint = self.rightButton.rightAnchor.constraint(equalTo: self.rightAnchor)
+        NSLayoutConstraint.activate([
+            self.rightButton.widthAnchor.constraint(equalToConstant: 30),
+            self.rightButton.heightAnchor.constraint(equalToConstant: 30),
+            self.rightButton.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            self.rightButton.leftAnchor.constraint(equalTo: self.textField.rightAnchor, constant: 5),
+            self.rightButtonConstraint
+        ])
+        self.rightButton.isHidden = true
+
+    }
+
+    // MARK: - Action
+    @objc private func rightViewDidTap() {
+        self.handleRightButtonDidTap()
     }
 
     // MARK: - Dynamic function
@@ -156,6 +189,14 @@ class SolarTextField: UIView {
             .font: UIFont.systemFont(ofSize: 17, weight: .medium),
             .foregroundColor: UIColor(rgb: 0xCACACA)
         ])
+    }
+
+    func handleRightButtonDidTap() {
+        self.delegate?.solarTextFieldDidTapRightButton?(self)
+    }
+
+    func setRightImage(image: UIImage?) {
+        self.rightButton.setImage(image, for: .normal)
     }
 }
 

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Regular.otf">
+            <string>Outfit-Regular</string>
+        </array>
+        <array key="Outfit-SemiBold.otf">
+            <string>Outfit-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <connections>
+                <outlet property="avtImageView" destination="Djw-v2-w8j" id="7gd-ug-36i"/>
+                <outlet property="dateOfBirthTextField" destination="YCW-xc-6iA" id="nD5-CK-vrH"/>
+                <outlet property="datePicker" destination="FU0-yi-F0Y" id="Biu-US-Sw8"/>
+                <outlet property="datePickerContainerView" destination="dQO-V0-w8O" id="MLX-Sr-n1c"/>
+                <outlet property="fullNameTextField" destination="4Nj-ho-Oyc" id="4AG-F0-Fko"/>
+                <outlet property="genderTextField" destination="bR0-MO-6AG" id="ypB-A6-56o"/>
+                <outlet property="nicknameTextField" destination="uM7-4b-ZUp" id="6TM-xu-yhb"/>
+                <outlet property="phoneNumberTextField" destination="cIv-qu-XfX" id="VzW-dA-1kh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dny-Vz-Cv8">
+                    <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdd-Pe-wde" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="10" y="0.0" width="60" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.left" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zzl-ju-AYm">
+                                    <rect key="frame" x="0.0" y="17.5" width="60" height="25"/>
+                                    <color key="tintColor" systemColor="labelColor"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="zzl-ju-AYm" secondAttribute="trailing" id="7dS-Sf-RT8"/>
+                                <constraint firstAttribute="width" secondItem="wdd-Pe-wde" secondAttribute="height" multiplier="1:1" id="7u1-ri-s1H"/>
+                                <constraint firstAttribute="bottom" secondItem="zzl-ju-AYm" secondAttribute="bottom" constant="15" id="GBX-pi-xNh"/>
+                                <constraint firstItem="zzl-ju-AYm" firstAttribute="top" secondItem="wdd-Pe-wde" secondAttribute="top" constant="15" id="jPC-uK-Kn1"/>
+                                <constraint firstItem="zzl-ju-AYm" firstAttribute="leading" secondItem="wdd-Pe-wde" secondAttribute="leading" id="uOA-NH-Szk"/>
+                            </constraints>
+                            <connections>
+                                <action selector="didTapBackButton:" destination="-1" eventType="touchUpInside" id="1dO-pv-9Bn"/>
+                            </connections>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fill Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1w-yh-zg3">
+                            <rect key="frame" x="80" y="0.0" width="161.5" height="60"/>
+                            <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="w1w-yh-zg3" firstAttribute="top" secondItem="dny-Vz-Cv8" secondAttribute="top" id="7jG-Bn-lv1"/>
+                        <constraint firstAttribute="height" constant="60" id="CnI-6r-9tG"/>
+                        <constraint firstAttribute="bottom" secondItem="w1w-yh-zg3" secondAttribute="bottom" id="RbY-bb-ybw"/>
+                        <constraint firstAttribute="bottom" secondItem="wdd-Pe-wde" secondAttribute="bottom" id="Vpp-37-yVh"/>
+                        <constraint firstItem="wdd-Pe-wde" firstAttribute="top" secondItem="dny-Vz-Cv8" secondAttribute="top" id="jdV-3F-gxh"/>
+                        <constraint firstItem="w1w-yh-zg3" firstAttribute="leading" secondItem="wdd-Pe-wde" secondAttribute="trailing" constant="10" id="muI-np-ugQ"/>
+                        <constraint firstItem="wdd-Pe-wde" firstAttribute="leading" secondItem="dny-Vz-Cv8" secondAttribute="leading" constant="10" id="poM-H6-z7f"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdm-cV-E1r">
+                    <rect key="frame" x="137" y="124" width="140" height="140"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_no_avt" translatesAutoresizingMaskIntoConstraints="NO" id="Djw-v2-w8j">
+                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifq-IV-AA6" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="108" y="108" width="32" height="32"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit" translatesAutoresizingMaskIntoConstraints="NO" id="Rr3-Cg-VLJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                    <color key="backgroundColor" red="0.1058823529" green="0.71372549019999998" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Rr3-Cg-VLJ" secondAttribute="trailing" id="8AM-d5-aOo"/>
+                                <constraint firstAttribute="width" constant="32" id="8ft-pm-hV8"/>
+                                <constraint firstItem="Rr3-Cg-VLJ" firstAttribute="top" secondItem="Ifq-IV-AA6" secondAttribute="top" id="IEU-Ec-a83"/>
+                                <constraint firstAttribute="bottom" secondItem="Rr3-Cg-VLJ" secondAttribute="bottom" id="JKJ-KN-sax"/>
+                                <constraint firstAttribute="height" constant="32" id="NtT-KU-DeY"/>
+                                <constraint firstItem="Rr3-Cg-VLJ" firstAttribute="leading" secondItem="Ifq-IV-AA6" secondAttribute="leading" id="Pt7-cL-Hys"/>
+                            </constraints>
+                            <connections>
+                                <action selector="didTapToChangeAvatar:" destination="-1" eventType="touchUpInside" id="5Ew-5M-hZf"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Djw-v2-w8j" firstAttribute="leading" secondItem="jdm-cV-E1r" secondAttribute="leading" id="TCt-Kg-l8L"/>
+                        <constraint firstAttribute="trailing" secondItem="Ifq-IV-AA6" secondAttribute="trailing" id="i8S-fD-I8U"/>
+                        <constraint firstAttribute="bottom" secondItem="Djw-v2-w8j" secondAttribute="bottom" id="myP-Gg-y79"/>
+                        <constraint firstAttribute="bottom" secondItem="Ifq-IV-AA6" secondAttribute="bottom" id="oMc-sx-tnz"/>
+                        <constraint firstAttribute="trailing" secondItem="Djw-v2-w8j" secondAttribute="trailing" id="siS-ZT-zFH"/>
+                        <constraint firstItem="Djw-v2-w8j" firstAttribute="top" secondItem="jdm-cV-E1r" secondAttribute="top" id="uQ8-5e-h76"/>
+                        <constraint firstAttribute="width" secondItem="jdm-cV-E1r" secondAttribute="height" multiplier="1:1" id="vFS-y8-o9N"/>
+                        <constraint firstAttribute="height" constant="140" id="xl3-ZN-HOe"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wbl-8u-cUu">
+                    <rect key="frame" x="12" y="284" width="390" height="330"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Nj-ho-Oyc" customClass="SolarTextField" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="qX4-dW-0X0"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uM7-4b-ZUp" customClass="SolarTextField" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="70" width="390" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="fdP-0V-iPc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCW-xc-6iA" customClass="SolarTextField" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="140" width="390" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="uaH-eJ-s8x"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIv-qu-XfX" customClass="SolarTextField" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="210" width="390" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="TP9-Ha-xVo"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bR0-MO-6AG" customClass="SolarTextField" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="280" width="390" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="BOd-ha-wnc"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mZS-hN-pdu" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="12" y="664" width="390" height="55"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmw-Bp-Hm7">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="55"/>
+                            <color key="backgroundColor" red="0.1058823529" green="0.71372549019999998" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="24"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Lmw-Bp-Hm7" firstAttribute="leading" secondItem="mZS-hN-pdu" secondAttribute="leading" id="7Sf-Md-ydB"/>
+                        <constraint firstAttribute="trailing" secondItem="Lmw-Bp-Hm7" secondAttribute="trailing" id="9M1-fB-Fvw"/>
+                        <constraint firstAttribute="bottom" secondItem="Lmw-Bp-Hm7" secondAttribute="bottom" id="9TE-U9-DJ1"/>
+                        <constraint firstItem="Lmw-Bp-Hm7" firstAttribute="top" secondItem="mZS-hN-pdu" secondAttribute="top" id="eHf-bH-YMV"/>
+                        <constraint firstAttribute="height" constant="55" id="eq1-G0-8ZI"/>
+                    </constraints>
+                </view>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQO-V0-w8O">
+                    <rect key="frame" x="0.0" y="646" width="414" height="250"/>
+                    <subviews>
+                        <datePicker alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="FU0-yi-F0Y">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="-3187253190">
+                                <!--1900-01-01 11:53:30 +0000-->
+                            </date>
+                            <connections>
+                                <action selector="didChangeCalendarValue:" destination="-1" eventType="valueChanged" id="mfT-aG-Fs6"/>
+                            </connections>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="FU0-yi-F0Y" firstAttribute="leading" secondItem="dQO-V0-w8O" secondAttribute="leading" id="1wg-4x-wyL"/>
+                        <constraint firstAttribute="bottom" secondItem="FU0-yi-F0Y" secondAttribute="bottom" id="Wmq-tK-nyU"/>
+                        <constraint firstItem="FU0-yi-F0Y" firstAttribute="top" secondItem="dQO-V0-w8O" secondAttribute="top" id="as2-Wo-Cvl"/>
+                        <constraint firstAttribute="trailing" secondItem="FU0-yi-F0Y" secondAttribute="trailing" id="dSX-YP-Cb0"/>
+                        <constraint firstAttribute="height" constant="250" id="vHu-S1-pAF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Wbl-8u-cUu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="06Y-Ub-ErR"/>
+                <constraint firstItem="mZS-hN-pdu" firstAttribute="top" secondItem="Wbl-8u-cUu" secondAttribute="bottom" constant="50" id="47e-s8-gtE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wbl-8u-cUu" secondAttribute="trailing" constant="12" id="I3b-Y7-z6E"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dny-Vz-Cv8" secondAttribute="trailing" id="PGb-vB-n4E"/>
+                <constraint firstItem="jdm-cV-E1r" firstAttribute="top" secondItem="dny-Vz-Cv8" secondAttribute="bottom" constant="20" id="T9b-Dv-NFn"/>
+                <constraint firstItem="jdm-cV-E1r" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="TYa-oj-cbd"/>
+                <constraint firstItem="Wbl-8u-cUu" firstAttribute="top" secondItem="jdm-cV-E1r" secondAttribute="bottom" constant="20" id="X1h-Ag-4NV"/>
+                <constraint firstAttribute="bottom" secondItem="dQO-V0-w8O" secondAttribute="bottom" id="Ykn-TM-20C"/>
+                <constraint firstItem="dny-Vz-Cv8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eI7-en-oms"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mZS-hN-pdu" secondAttribute="trailing" constant="12" id="nrd-f2-9ny"/>
+                <constraint firstItem="mZS-hN-pdu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="o2z-GV-Yof"/>
+                <constraint firstAttribute="trailing" secondItem="dQO-V0-w8O" secondAttribute="trailing" id="qaw-vk-QqT"/>
+                <constraint firstItem="dny-Vz-Cv8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qx1-Nh-XQK"/>
+                <constraint firstItem="dQO-V0-w8O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tb8-Un-ZSI"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="82"/>
+        </view>
+        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="Uih-y3-cQF">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <viewLayoutGuide key="safeArea" id="8F3-rL-l20"/>
+            <point key="canvasLocation" x="-341" y="-41"/>
+        </stackView>
+    </objects>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="ic_edit" width="28" height="28"/>
+        <image name="ic_no_avt" width="128" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
