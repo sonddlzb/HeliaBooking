@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import SVProgressHUD
 
 private struct Const {
     static let leftPadding = 12.0
@@ -42,6 +44,7 @@ class SignInWithPassWordViewController: UIViewController {
 
     private lazy var loginByPasswordView: LoginByPasswordView = {
         let loginByPasswordView = LoginByPasswordView()
+        loginByPasswordView.delegate = self
         return loginByPasswordView
     }()
 
@@ -114,5 +117,21 @@ extension SignInWithPassWordViewController: FacebookSignInDelegate {
 extension SignInWithPassWordViewController: GoogleSignInManagerDelegate {
     func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager) {
         print("sucessfully")
+    }
+}
+
+extension SignInWithPassWordViewController: LoginByPasswordViewDelegate {
+    func loginByPasswordViewDidTapConfirm(_ loginByPasswordView: LoginByPasswordView, email: String, password: String) {
+        SVProgressHUD.show()
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            SVProgressHUD.dismiss()
+            guard let authResult = authResult, error == nil else {
+                FailedDialog.show(title: "Failed to sign in", message: error?.localizedDescription ?? "Something went wrong!")
+                return
+            }
+
+            print("Login successfully!")
+            // route to Home
+        }
     }
 }
