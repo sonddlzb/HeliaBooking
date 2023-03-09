@@ -15,8 +15,6 @@ private struct Const {
 }
 
 class SignInWithPassWordViewController: UIViewController {
-    
-    
     @IBOutlet private weak var btnPopScreen: TapableView!
     
     private lazy var signInByOtherView: SignInByOtherView = {
@@ -25,6 +23,21 @@ class SignInWithPassWordViewController: UIViewController {
             return signInByOtherView
         }
             return signInByOtherView
+    }()
+    
+    private lazy var btnForgotThePassword: TapableView = {
+        let tapableView = TapableView()
+        let label = UILabel()
+        label.text = "Forgot the password?"
+        label.textAlignment = .center
+        label.font = Outfit.regularFont(size: 17)
+        label.textColor = R.color.crayola()
+        tapableView.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.centerXAnchor.constraint(equalTo: tapableView.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: tapableView.centerYAnchor).isActive = true
+        tapableView.addTarget(self, action: #selector(didTapForgotThePassword(_:)), for: .touchUpInside)
+        return tapableView
     }()
     
     private lazy var loginByPasswordView: LoginByPasswordView = {
@@ -45,21 +58,28 @@ class SignInWithPassWordViewController: UIViewController {
     private func addContentView() {
         view.addSubview(signInByOtherView)
         view.addSubview(loginByPasswordView)
+        view.addSubview(btnForgotThePassword)
         signInByOtherView.delegate = self
     }
     
     private func addConstraintLayout() {
         signInByOtherView.translatesAutoresizingMaskIntoConstraints = false
         loginByPasswordView.translatesAutoresizingMaskIntoConstraints = false
+        btnForgotThePassword.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInByOtherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             signInByOtherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             signInByOtherView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            btnForgotThePassword.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            btnForgotThePassword.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            btnForgotThePassword.topAnchor.constraint(equalTo: loginByPasswordView.bottomAnchor, constant: 20.0),
+            btnForgotThePassword.bottomAnchor.constraint(equalTo: signInByOtherView.topAnchor),
+            btnForgotThePassword.heightAnchor.constraint(equalToConstant: 10.0),
 
             loginByPasswordView.topAnchor.constraint(lessThanOrEqualTo: btnPopScreen.bottomAnchor, constant: Const.bottomPadding),
             loginByPasswordView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             loginByPasswordView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            loginByPasswordView.bottomAnchor.constraint(equalTo: signInByOtherView.topAnchor)
         ])
     }
 
@@ -67,6 +87,10 @@ class SignInWithPassWordViewController: UIViewController {
     
     @IBAction func popScreenAction(_ sender: TapableView) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func didTapForgotThePassword(_ sender: Any) {
+        navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
     }
     
 }
@@ -88,7 +112,6 @@ extension SignInWithPassWordViewController: FacebookSignInDelegate {
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
         print("sucessfully")
     }
-
 
 }
 
