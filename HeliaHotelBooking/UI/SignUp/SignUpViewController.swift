@@ -9,6 +9,7 @@ import UIKit
 import AVKit
 import Photos
 import DropDown
+import SVProgressHUD
 
 class SignUpViewController: UIViewController {
 
@@ -26,6 +27,18 @@ class SignUpViewController: UIViewController {
     private var imagePicker = UIImagePickerController()
     private var currentDate = Date()
     private var dropDown = DropDown()
+    private var email: String
+    private var password: String
+
+    init(email: String, password: String) {
+        self.email = email
+        self.password = password
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -231,7 +244,28 @@ class SignUpViewController: UIViewController {
             return
         }
 
-        //handle call API to store data in Firebase
+        SVProgressHUD.show()
+        let userId = UUID().uuidString
+        if let image = self.avtImageView.image {
+            let userEntity = UserEntity(id: userId,
+                                        fullName: self.fullNameTextField.text,
+                                        nickname: self.nicknameTextField.text,
+                                        dateOfBirth: self.currentDate.formatDate(),
+                                        phoneNumber: self.phoneNumberTextField.text,
+                                        gender: self.genderTextField.text,
+                                        avtURL: "")
+            Database.shared.addNewUser(email: email, password: password, userEntity: userEntity, image: image, completion: { error in
+                SVProgressHUD.dismiss()
+                if let error = error {
+                    FailedDialog.show(title: "Failed to sign up new account",
+                                      message: error.localizedDescription)
+                } else {
+                    let notificationView = NotificationDialogView.loadView()
+                    notificationView.delegate = self
+                    notificationView.show(in: self.view, title: "Sign up successfully!", message: "Welcome to Helia Hotel Booking App. Let's try it right now")
+                }
+            })
+        }
     }
 }
 
@@ -266,5 +300,12 @@ extension SignUpViewController {
         if touches.first?.view == self.view {
             self.hideDatePicker()
         }
+    }
+}
+
+// MARK: - NotificationDialogViewDelegate
+extension SignUpViewController: NotificationDialogViewDelegate {
+    func notificationDialogViewDidTapOk(_ notificationDialogView: NotificationDialogView) {
+        //route to Home
     }
 }

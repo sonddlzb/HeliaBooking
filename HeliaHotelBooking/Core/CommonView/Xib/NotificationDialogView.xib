@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,7 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CancelNotificationDialogView" customModule="TestCustomView" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotificationDialogView" customModule="HeliaHotelBooking" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -50,7 +51,7 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywx-LP-r8D" customClass="TapableView" customModule="TestCustomView" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywx-LP-r8D" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
                             <rect key="frame" x="20" y="345.5" width="274" height="55"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KD-N2-uzG">
@@ -116,6 +117,8 @@
             <connections>
                 <outlet property="backgroundView" destination="wtk-WX-ffe" id="3yr-oK-vXo"/>
                 <outlet property="containerView" destination="U0o-ZK-zYm" id="0pZ-gv-Anu"/>
+                <outlet property="messageLabel" destination="UKg-XA-3hM" id="TWG-rG-jhE"/>
+                <outlet property="titleLabel" destination="NNC-5k-O12" id="FTk-Dg-Soc"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </view>

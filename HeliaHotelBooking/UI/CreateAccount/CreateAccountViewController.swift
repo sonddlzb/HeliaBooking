@@ -1,8 +1,8 @@
 //
-//  SignInWithPassWordViewController.swift
+//  CreateAccountViewController.swift
 //  HeliaHotelBooking
 //
-//  Created by Hà Quang Hưng on 07/03/2023.
+//  Created by đào sơn on 09/03/2023.
 //
 
 import UIKit
@@ -14,8 +14,9 @@ private struct Const {
     static let height = 300.0
 }
 
-class SignInWithPassWordViewController: UIViewController {
-    @IBOutlet private weak var btnPopScreen: TapableView!
+class CreateAccountViewController: UIViewController {
+    // MARK: - Outlets
+    @IBOutlet private weak var backButton: TapableView!
 
     private lazy var signInByOtherView: SignInByOtherView = {
         guard let signInByOtherView = SignInByOtherView.loadView(fromNib: "SignInByOtherView") else {
@@ -24,27 +25,15 @@ class SignInWithPassWordViewController: UIViewController {
         }
             return signInByOtherView
     }()
-    
-    private lazy var btnForgotThePassword: TapableView = {
-        let tapableView = TapableView()
-        let label = UILabel()
-        label.text = "Forgot the password?"
-        label.textAlignment = .center
-        label.font = Outfit.regularFont(size: 17)
-        label.textColor = R.color.crayola()
-        tapableView.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.centerXAnchor.constraint(equalTo: tapableView.centerXAnchor).isActive = true
-        label.centerYAnchor.constraint(equalTo: tapableView.centerYAnchor).isActive = true
-        tapableView.addTarget(self, action: #selector(didTapForgotThePassword(_:)), for: .touchUpInside)
-        return tapableView
-    }()
 
     private lazy var loginByPasswordView: LoginByPasswordView = {
         let loginByPasswordView = LoginByPasswordView()
+        loginByPasswordView.bindData(title: "Create your Account", confirmContent: "Sign up")
+        loginByPasswordView.delegate = self
         return loginByPasswordView
     }()
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -58,41 +47,32 @@ class SignInWithPassWordViewController: UIViewController {
     private func addContentView() {
         view.addSubview(signInByOtherView)
         view.addSubview(loginByPasswordView)
-        view.addSubview(btnForgotThePassword)
         signInByOtherView.delegate = self
     }
 
     private func addConstraintLayout() {
         signInByOtherView.translatesAutoresizingMaskIntoConstraints = false
         loginByPasswordView.translatesAutoresizingMaskIntoConstraints = false
-        btnForgotThePassword.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signInByOtherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             signInByOtherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             signInByOtherView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            btnForgotThePassword.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            btnForgotThePassword.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            btnForgotThePassword.topAnchor.constraint(equalTo: loginByPasswordView.bottomAnchor, constant: 20.0),
-            btnForgotThePassword.bottomAnchor.constraint(equalTo: signInByOtherView.topAnchor),
-            btnForgotThePassword.heightAnchor.constraint(equalToConstant: 10.0),
 
-            loginByPasswordView.topAnchor.constraint(lessThanOrEqualTo: btnPopScreen.bottomAnchor, constant: Const.bottomPadding),
+            loginByPasswordView.topAnchor.constraint(lessThanOrEqualTo: backButton.bottomAnchor, constant: Const.bottomPadding),
             loginByPasswordView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             loginByPasswordView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loginByPasswordView.bottomAnchor.constraint(equalTo: signInByOtherView.topAnchor)
         ])
     }
 
-    @IBAction func popScreenAction(_ sender: TapableView) {
+    // MARK: - Actions
+    @IBAction func backButtonDidTap(_ sender: TapableView) {
         navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func didTapForgotThePassword(_ sender: Any) {
-        navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
     }
 }
 
-extension SignInWithPassWordViewController: SignInByOtherViewDelegate {
+// MARK: - SignInByOtherViewDelegate
+extension CreateAccountViewController: SignInByOtherViewDelegate {
     func signInByOtherViewDidTapSignInFacebook(_ signInByOtherView: SignInByOtherView) {
         FacebookSignInManager.shared.delegate = self
         FacebookSignInManager.shared.signIn(withPresenting: self)
@@ -105,14 +85,24 @@ extension SignInWithPassWordViewController: SignInByOtherViewDelegate {
 
 }
 
-extension SignInWithPassWordViewController: FacebookSignInDelegate {
+// MARK: - FacebookSignInDelegate
+extension CreateAccountViewController: FacebookSignInDelegate {
     func facebookSignInManagerDidSignInSuccessfully(_ facebookSignInManager: FacebookSignInManager) {
         print("sucessfully")
     }
 }
 
-extension SignInWithPassWordViewController: GoogleSignInManagerDelegate {
+// MARK: - GoogleSignInManagerDelegate
+extension CreateAccountViewController: GoogleSignInManagerDelegate {
     func googleSignInManagerDidSignInSuccessfully(_ googleSignInManager: GoogleSignInManager) {
         print("sucessfully")
+    }
+}
+
+// MARK: - LoginByPasswordViewDelegate
+extension CreateAccountViewController: LoginByPasswordViewDelegate {
+    func loginByPasswordViewDidTapConfirm(_ loginByPasswordView: LoginByPasswordView, email: String, password: String) {
+        let signUpViewController = SignUpViewController(email: email, password: password)
+        self.navigationController?.pushViewController(signUpViewController, animated: true)
     }
 }

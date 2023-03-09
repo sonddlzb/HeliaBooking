@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import GoogleSignIn
+import SVProgressHUD
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func config() {
         self.configFirebase()
+        SVProgressHUD.setDefaultStyle(.dark)
     }
 
     func configFirebase() {
