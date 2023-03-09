@@ -186,6 +186,9 @@
                         <constraint firstItem="Lmw-Bp-Hm7" firstAttribute="top" secondItem="mZS-hN-pdu" secondAttribute="top" id="eHf-bH-YMV"/>
                         <constraint firstAttribute="height" constant="55" id="eq1-G0-8ZI"/>
                     </constraints>
+                    <connections>
+                        <action selector="didTapContinueButton:" destination="-1" eventType="touchUpInside" id="xxb-dh-oMC"/>
+                    </connections>
                 </view>
                 <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQO-V0-w8O">
                     <rect key="frame" x="0.0" y="646" width="414" height="250"/>

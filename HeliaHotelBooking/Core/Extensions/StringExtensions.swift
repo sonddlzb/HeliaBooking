@@ -64,10 +64,10 @@ public extension String {
 }
 
 public extension String {
-    func convertToDate() -> Date {
+    func convertToDate() -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-mm-dd"
-        return dateFormatter.date(from: self) ?? Date()
+        return dateFormatter.date(from: self)
     }
 
     func matches(regex: String) -> Bool {
