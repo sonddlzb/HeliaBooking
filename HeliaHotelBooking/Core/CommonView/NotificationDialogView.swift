@@ -18,7 +18,8 @@ class NotificationDialogView: UIView {
     @IBOutlet private weak var backgroundView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var messageLabel: UILabel!
-
+    @IBOutlet weak var mesageImage: UIImageView!
+    
     static func loadView() -> NotificationDialogView {
         return NotificationDialogView.loadView(fromNib: "NotificationDialogView")!
     }
@@ -39,6 +40,18 @@ class NotificationDialogView: UIView {
         self.alpha = 0
         self.titleLabel.text = title
         self.messageLabel.text = message
+        view.addSubview(self)
+        self.fitSuperviewConstraint()
+        UIView.animate(withDuration: 0.25) {
+            self.alpha = 1
+        }
+    }
+
+    func show(in view: UIView, title: String, message: String,image: UIImage?) {
+        self.alpha = 0
+        self.titleLabel.text = title
+        self.messageLabel.text = message
+        self.mesageImage.image = image
         view.addSubview(self)
         self.fitSuperviewConstraint()
         UIView.animate(withDuration: 0.25) {
