@@ -26,7 +26,7 @@ class SignInWithPassWordViewController: UIViewController {
         }
             return signInByOtherView
     }()
-    
+
     private lazy var btnForgotThePassword: TapableView = {
         let tapableView = TapableView()
         let label = UILabel()
@@ -73,23 +73,24 @@ class SignInWithPassWordViewController: UIViewController {
             signInByOtherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             signInByOtherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             signInByOtherView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
             btnForgotThePassword.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             btnForgotThePassword.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             btnForgotThePassword.topAnchor.constraint(equalTo: loginByPasswordView.bottomAnchor, constant: 20.0),
             btnForgotThePassword.bottomAnchor.constraint(equalTo: signInByOtherView.topAnchor),
             btnForgotThePassword.heightAnchor.constraint(equalToConstant: 10.0),
 
-            loginByPasswordView.topAnchor.constraint(lessThanOrEqualTo: btnPopScreen.bottomAnchor, constant: Const.bottomPadding),
+            loginByPasswordView.topAnchor.constraint(lessThanOrEqualTo: btnPopScreen.bottomAnchor,
+                constant: Const.bottomPadding),
             loginByPasswordView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            loginByPasswordView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            loginByPasswordView.trailingAnchor
+            .constraint(equalTo: view.trailingAnchor),
         ])
     }
 
     @IBAction func popScreenAction(_ sender: TapableView) {
         navigationController?.popViewController(animated: true)
     }
-    
+
     @objc func didTapForgotThePassword(_ sender: Any) {
         navigationController?.pushViewController(ForgotPasswordViewController(), animated: true)
     }

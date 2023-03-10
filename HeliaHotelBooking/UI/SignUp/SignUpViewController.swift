@@ -50,8 +50,8 @@ class SignUpViewController: UIViewController {
     private func config() {
         fullNameTextField.placeholder = "Full Name"
         fullNameTextField.isHighlightedWhenEditting = true
-        fullNameTextField.backgroundColor = R.color.lotion()
-        fullNameTextField.borderColor = R.color.crayola()
+//        fullNameTextField.backgroundColor = R.color.lotion()
+//        fullNameTextField.borderColor = R.color.crayola()
         fullNameTextField.textField.paddingLeft = 10
         fullNameTextField.cornerRadius = 12
         fullNameTextField.delegate = self
@@ -59,39 +59,39 @@ class SignUpViewController: UIViewController {
 
         nicknameTextField.placeholder = "Nickname"
         nicknameTextField.isHighlightedWhenEditting = true
-        nicknameTextField.backgroundColor = R.color.lotion()
-        nicknameTextField.borderColor = R.color.crayola()
+//        nicknameTextField.backgroundColor = R.color.lotion()
+//        nicknameTextField.borderColor = R.color.crayola()
         nicknameTextField.textField.paddingLeft = 10
         nicknameTextField.cornerRadius = 12
         nicknameTextField.delegate = self
 
         dateOfBirthTextField.placeholder = "Date of Birth"
         dateOfBirthTextField.isHighlightedWhenEditting = true
-        dateOfBirthTextField.backgroundColor = R.color.lotion()
-        dateOfBirthTextField.borderColor = R.color.crayola()
+//        dateOfBirthTextField.backgroundColor = R.color.lotion()
+//        dateOfBirthTextField.borderColor = R.color.crayola()
         dateOfBirthTextField.textField.paddingLeft = 10
         dateOfBirthTextField.cornerRadius = 12
         dateOfBirthTextField.delegate = self
         dateOfBirthTextField.isRightButtonEnable = true
-        dateOfBirthTextField.setRightImage(image: R.image.ic_calendar())
+        //dateOfBirthTextField.setRightImage(image: R.image.ic_calendar())
 
         phoneNumberTextField.placeholder = "Phone Number"
         phoneNumberTextField.isHighlightedWhenEditting = true
-        phoneNumberTextField.backgroundColor = R.color.lotion()
-        phoneNumberTextField.borderColor = R.color.crayola()
+//        phoneNumberTextField.backgroundColor = R.color.lotion()
+//        phoneNumberTextField.borderColor = R.color.crayola()
         phoneNumberTextField.textField.paddingLeft = 10
         phoneNumberTextField.cornerRadius = 12
         phoneNumberTextField.delegate = self
 
         genderTextField.placeholder = "Gender"
         genderTextField.isHighlightedWhenEditting = true
-        genderTextField.backgroundColor = R.color.lotion()
-        genderTextField.borderColor = R.color.crayola()
+//        genderTextField.backgroundColor = R.color.lotion()
+//        genderTextField.borderColor = R.color.crayola()
         genderTextField.textField.paddingLeft = 10
         genderTextField.cornerRadius = 12
         genderTextField.delegate = self
         genderTextField.isRightButtonEnable = true
-        genderTextField.setRightImage(image: R.image.ic_arrow_down())
+//        genderTextField.setRightImage(image: R.image.ic_arrow_down())
 
         self.imagePicker.delegate = self
         self.datePicker.maximumDate = Date()

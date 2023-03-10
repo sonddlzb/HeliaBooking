@@ -14,8 +14,6 @@ class InsertCodeViewController: UIViewController {
     @IBOutlet weak var textField4: UITextField!
     @IBOutlet weak var labelPhoneNumber: UILabel!
     @IBOutlet weak var labelCountingTime: UILabel!
-    
-    
     private var textField1IsEditing = false
     private var textField2IsEditing = false
     private var textField3IsEditing = false
@@ -25,7 +23,7 @@ class InsertCodeViewController: UIViewController {
         super.viewDidLoad()
         setUpView()
     }
-    
+
     private func setUpView() {
         textField1.delegate = self
         textField2.delegate = self
@@ -33,25 +31,23 @@ class InsertCodeViewController: UIViewController {
         textField4.delegate = self
         textField1.becomeFirstResponder()
     }
-    
-    
+
     @IBAction func btnPopScreenDidTap(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-    
+
     @IBAction func btnVerifyDidTap(_ sender: Any) {
         //verify code
     }
-    
-    
+
 }
 
 extension InsertCodeViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+        replacementString string: String) -> Bool {
         let maxLength = 1
         let currentString = (textField.text ?? "") as NSString
         let newString = currentString.replacingCharacters(in: range, with: string)
-    
         return newString.count <= maxLength
     }
     
@@ -84,18 +80,16 @@ extension InsertCodeViewController: UITextFieldDelegate {
             textField1.becomeFirstResponder()
             textField2IsEditing = false
         }
-        
     }
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.borderColor = R.color.crayola()
+        //textField.borderColor = R.color.crayola()
         return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        textField.borderColor = R.color.lightGray()
+        //textField.borderColor = R.color.lightGray()
         return true
     }
     
 }
-
