@@ -11,6 +11,10 @@ private struct Const {
     static let avatarPath = "avatar"
 }
 
+private struct ConstFirebaseField {
+    static let numberOfBookedTimes = "numberOfBookedTimes"
+}
+
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
@@ -92,7 +96,9 @@ class Database {
     }
 
     func getHotelsBy(topic: String, completion: @escaping (_ listHotels: [Hotel]) -> Void) {
-        self.database.collection(Const.hotelsCollectionName).whereField("tag", isEqualTo: topic).getDocuments { querySnapshot, err in
+        self.database.collection(Const.hotelsCollectionName)
+            .whereField("tag", isEqualTo: topic)
+            .getDocuments { querySnapshot, err in
             if let err = err {
                 print("Error getting documents: \(err)")
                 completion([])
@@ -100,8 +106,33 @@ class Database {
                 var listHotels: [Hotel] = []
                 for document in querySnapshot.documents {
                     let hotelId = document.documentID
-                    guard let hotelData = try? JSONSerialization.data(withJSONObject: document.data(),
-                                                                      options: []) else {
+                    guard let hotelData = try? JSONSerialization
+                        .data(withJSONObject: document.data(), options: []) else {
+                        continue
+                    }
+
+                    if let hotelEntity = try? JSONDecoder().decode(HotelEntity.self, from: hotelData) {
+                        listHotels.append(Hotel(id: hotelId, entity: hotelEntity))
+                    }
+                }
+                completion(listHotels)
+            }
+        }
+    }
+
+    func getHotelsSortBynumberOfBookedTimes(completion: @escaping (_ listHotels: [Hotel]) -> Void) {
+        self.database.collection(Const.hotelsCollectionName)
+            .order(by: ConstFirebaseField.numberOfBookedTimes, descending: true)
+            .getDocuments { querySnapshot, err in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion([])
+            } else if let querySnapshot = querySnapshot {
+                var listHotels: [Hotel] = []
+                for document in querySnapshot.documents {
+                    let hotelId = document.documentID
+                    guard let hotelData = try? JSONSerialization
+                        .data(withJSONObject: document.data(), options: []) else {
                         continue
                     }
 
