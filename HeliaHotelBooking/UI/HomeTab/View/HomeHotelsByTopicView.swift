@@ -11,6 +11,7 @@ private struct Const {
 
 protocol HomeHotelsByTopicViewDelegate: AnyObject {
     func homeHotelsByTopicView(_ homeHotelsByTopicView: HomeHotelsByTopicView, didSelectAt topic: String)
+    func homeHotelsByTopicViewDidChangeFavoriteStatus(_ homeHotelsByTopicView: HomeHotelsByTopicView, at hotel: Hotel, isFavorite: Bool)
 }
 
 import UIKit
@@ -105,6 +106,7 @@ extension HomeHotelsByTopicView: TopicTabBarViewDelegate, TopicTabBarViewDatasou
 extension HomeHotelsByTopicView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueCell(type: HotelByTopicViewCell.self, indexPath: indexPath) ?? HotelByTopicViewCell()
+        cell.delegate = self
         cell.bind(itemViewModel: self.viewModel.item(at: indexPath.row))
         return cell
     }
@@ -122,5 +124,12 @@ extension HomeHotelsByTopicView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.frame.width*2/3, height: Const.cellHeight)
+    }
+}
+
+// MARK: - HotelByTopicViewCellDelegate
+extension HomeHotelsByTopicView: HotelByTopicViewCellDelegate {
+    func hotelByTopicViewCellDidChangeFavoriteStatus(_ hotelByTopicViewCell: HotelByTopicViewCell, at hotel: Hotel, isFavorite: Bool) {
+        self.delegate?.homeHotelsByTopicViewDidChangeFavoriteStatus(self, at: hotel, isFavorite: isFavorite)
     }
 }

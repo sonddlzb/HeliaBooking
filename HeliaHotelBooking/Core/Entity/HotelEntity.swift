@@ -17,4 +17,7 @@ struct HotelEntity: Codable {
     var countryName: String
     var accomadationType: String
     var tag: String
+    var numberOfBookedTimes: Int
+    var isFavorite: Bool
+    var description: String
 }
