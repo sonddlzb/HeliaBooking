@@ -104,8 +104,19 @@ class Database {
                         listHotels.append(Hotel(id: hotelId, entity: hotelEntity))
                     }
                 }
-
                 completion(listHotels)
+            }
+        }
+    }
+
+    func updateHotelsFavoriteStatus(at hotel: Hotel, isFavorite: Bool, completion: @escaping (_ result: Bool) -> Void) {
+        self.database.collection(Const.hotelsCollectionName).document(hotel.id).getDocument { document, err in
+            if let err = err {
+                print("Error update documents: \(err)")
+                completion(false)
+            } else if let document = document {
+                document.reference.updateData(["isFavorite": isFavorite])
+                completion(true)
             }
         }
     }

@@ -131,6 +131,7 @@
             </constraints>
             <size key="customSize" width="274" height="375"/>
             <connections>
+                <outlet property="favoriteImageView" destination="QQz-hU-hTG" id="ieF-VF-pXL"/>
                 <outlet property="locationLabel" destination="Zcb-4M-2UI" id="0ah-vH-3cZ"/>
                 <outlet property="nameLabel" destination="AHJ-lK-6zd" id="Kek-kZ-8ip"/>
                 <outlet property="priceLabel" destination="9l5-Zg-xIp" id="UL5-If-YgD"/>

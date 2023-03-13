@@ -18,8 +18,14 @@ class Hotel {
     var countryName: String
     var accomadationType: String
     var tag: String
+    var numberOfBookedTimes: Int
+    var isFavorite: Bool
+    var description: String
 
-    init(id: String, galleryURL: [String], name: String, area: Double, location: String, facilities: [String], price: Double, countryName: String, accomadationType: String, tag: String) {
+    init(id: String, galleryURL: [String], name: String, area: Double,
+         location: String, facilities: [String], price: Double,
+         countryName: String, accomadationType: String, tag: String,
+         numberOfBookedTimes: Int, isFavorite: Bool, description: String) {
         self.id = id
         self.galleryURL = galleryURL
         self.name = name
@@ -30,6 +36,9 @@ class Hotel {
         self.countryName = countryName
         self.accomadationType = accomadationType
         self.tag = tag
+        self.numberOfBookedTimes = numberOfBookedTimes
+        self.isFavorite = isFavorite
+        self.description = description
     }
 
     init(id: String, entity: HotelEntity) {
@@ -43,5 +52,8 @@ class Hotel {
         self.countryName = entity.countryName
         self.accomadationType = entity.accomadationType
         self.tag = entity.tag
+        self.numberOfBookedTimes = entity.numberOfBookedTimes
+        self.isFavorite = entity.isFavorite
+        self.description = entity.description
     }
 }

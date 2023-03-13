@@ -31,10 +31,22 @@ class HomeTabViewController: UIViewController {
             self.homeHotelsByTopicView.bind(viewModel: HomeHotelsByTopicViewModel(listHotels: listHotels))
         }
     }
+
+    private func changeHotelFavoriteStatus(at hotel: Hotel, isFavorite: Bool) {
+        Database.shared.updateHotelsFavoriteStatus(at: hotel, isFavorite: isFavorite) { result in
+            if !result {
+                FailedDialog.show(title: "Failed to update this hotel", message: "Something went wrong. Try again later!")
+            }
+        }
+    }
 }
 
 // MARK: - HomeHotelsByTopicViewDelegate
 extension HomeTabViewController: HomeHotelsByTopicViewDelegate {
+    func homeHotelsByTopicViewDidChangeFavoriteStatus(_ homeHotelsByTopicView: HomeHotelsByTopicView, at hotel: Hotel, isFavorite: Bool) {
+        self.changeHotelFavoriteStatus(at: hotel, isFavorite: isFavorite)
+    }
+
     func homeHotelsByTopicView(_ homeHotelsByTopicView: HomeHotelsByTopicView, didSelectAt topic: String) {
         self.fetchData(topic: topic)
     }
