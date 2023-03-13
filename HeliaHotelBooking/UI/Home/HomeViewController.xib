@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="4ES-Es-tNz" id="Qr4-Uc-oJj"/>
+                <outlet property="homeTabBar" destination="chw-94-cHf" id="iMg-vx-OE9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chw-94-cHf" customClass="HomeTabBar" customModule="HeliaHotelBooking" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="792" width="414" height="70"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="t8a-31-YDL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ES-Es-tNz" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="44" width="414" height="748"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="chw-94-cHf" secondAttribute="bottom" id="5IU-oG-V5t"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4ES-Es-tNz" secondAttribute="trailing" id="I2R-mm-bHZ"/>
+                <constraint firstItem="chw-94-cHf" firstAttribute="top" secondItem="4ES-Es-tNz" secondAttribute="bottom" id="KxB-1l-nIJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="chw-94-cHf" secondAttribute="trailing" id="Li6-U4-aCx"/>
+                <constraint firstItem="4ES-Es-tNz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jWA-fE-0QO"/>
+                <constraint firstItem="chw-94-cHf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m4N-9p-eyH"/>
+                <constraint firstItem="4ES-Es-tNz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ngq-DZ-0v7"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="82"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

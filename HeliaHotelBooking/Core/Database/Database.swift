@@ -7,6 +7,7 @@
 
 private struct Const {
     static let usersCollectionName = "users"
+    static let hotelsCollectionName = "hotels"
     static let avatarPath = "avatar"
 }
 
@@ -24,8 +25,8 @@ class Database {
         self.database.collection(Const.usersCollectionName).getDocuments { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
+            } else if let querySnapshot = querySnapshot {
+                for document in querySnapshot.documents {
                     print("\(document.documentID) => \(document.data())")
                 }
             }
@@ -82,6 +83,29 @@ class Database {
 
                 self.database.collection(Const.usersCollectionName).document(authResult.user.uid).setData(userData)
                 completion(nil)
+            }
+        }
+    }
+
+    func getHotelsBy(topic: String, completion: @escaping (_ listHotels: [Hotel]) -> Void) {
+        self.database.collection(Const.hotelsCollectionName).whereField("tag", isEqualTo: topic).getDocuments { querySnapshot, err in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion([])
+            } else if let querySnapshot = querySnapshot {
+                var listHotels: [Hotel] = []
+                for document in querySnapshot.documents {
+                    let hotelId = document.documentID
+                    guard let hotelData = try? JSONSerialization.data(withJSONObject: document.data(), options: []) else {
+                        continue
+                    }
+
+                    if let hotelEntity = try? JSONDecoder().decode(HotelEntity.self, from: hotelData) {
+                        listHotels.append(Hotel(id: hotelId, entity: hotelEntity))
+                    }
+                }
+
+                completion(listHotels)
             }
         }
     }

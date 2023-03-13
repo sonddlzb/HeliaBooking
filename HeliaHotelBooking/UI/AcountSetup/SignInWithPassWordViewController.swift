@@ -132,7 +132,8 @@ extension SignInWithPassWordViewController: LoginByPasswordViewDelegate {
             }
 
             print("Login successfully!")
-            // route to Home
+            self?.navigationController?.pushViewController(HomeViewController(), animated: true)
         }
+
     }
 }
