@@ -47,6 +47,9 @@
                                 <constraint firstItem="Wmb-KQ-DZc" firstAttribute="top" secondItem="MPc-zR-32b" secondAttribute="top" constant="10" id="ixo-qo-cs2"/>
                                 <constraint firstAttribute="width" constant="40" id="ybK-ey-z9P"/>
                             </constraints>
+                            <connections>
+                                <action selector="didTapMyBookmarkButton:" destination="-1" eventType="touchUpInside" id="kWD-2A-g7P"/>
+                            </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z11-7E-FvG" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
                             <rect key="frame" x="314" y="10" width="30" height="30"/>
@@ -128,7 +131,7 @@
     </objects>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="ic_bookmark_black" width="80" height="80"/>
+        <image name="ic_bookmark_black" width="64" height="64"/>
         <image name="ic_notification" width="50" height="50"/>
         <image name="ic_welcome" width="40" height="40"/>
         <systemColor name="systemBackgroundColor">

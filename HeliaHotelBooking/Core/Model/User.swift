@@ -15,6 +15,7 @@ class User {
     var phoneNumber: String
     var gender: Gender
     var avtURL: String
+    var favoriteHotels: [String] = []
 
     init(id: String, fullName: String, nickname: String,
          dateOfBirth: Date, phoneNumber: String, gender: Gender, avtURL: String) {
@@ -35,5 +36,6 @@ class User {
         self.phoneNumber = userEntity.phoneNumber
         self.gender = Gender(rawValue: userEntity.gender) ?? .others
         self.avtURL = userEntity.avtURL
+        self.favoriteHotels = userEntity.favoriteHotels
     }
 }

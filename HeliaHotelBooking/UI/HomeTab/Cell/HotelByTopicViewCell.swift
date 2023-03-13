@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 protocol HotelByTopicViewCellDelegate: AnyObject {
-    func hotelByTopicViewCellDidChangeFavoriteStatus(_ hotelByTopicViewCell: HotelByTopicViewCell, at hotel: Hotel, isFavorite: Bool)
+    func hotelByTopicViewCellDidChangeFavoriteStatus(_ hotelByTopicViewCell: HotelByTopicViewCell,
+                                                     at hotel: Hotel, isFavorite: Bool)
 }
 
 class HotelByTopicViewCell: UICollectionViewCell {
@@ -22,18 +22,22 @@ class HotelByTopicViewCell: UICollectionViewCell {
 
     weak var delegate: HotelByTopicViewCellDelegate?
     private var itemViewModel: HomeHotelsByTopicItemViewModel?
+    private var isFavorite = false
 
     func bind(itemViewModel: HomeHotelsByTopicItemViewModel) {
         self.itemViewModel = itemViewModel
         self.nameLabel.text = itemViewModel.hotel.name
         self.locationLabel.text = itemViewModel.hotel.location
         self.priceLabel.text = "\(itemViewModel.hotel.price)$"
-        self.favoriteImageView.image = itemViewModel.hotel.isFavorite ? R.image.ic_bookmark() : R.image.ic_bookmark_selected()
-        SVProgressHUD.show()
-        itemViewModel.loadImageFrom { image in
-            SVProgressHUD.dismiss()
-            self.thumbnailImageView.image = image
+        itemViewModel.checkFavoriteStatus { isFavorite in
+            self.isFavorite = isFavorite
+            DispatchQueue.main.async {
+                self.favoriteImageView.image = isFavorite ?
+                UIImage(named: "ic_bookmark_selected") : UIImage(named: "ic_bookmark")
+            }
         }
+
+        self.thumbnailImageView.setImage(with: itemViewModel.hotelThumbnailURL(), indicator: .activity)
     }
 
     @IBAction func didTapMyBookmarkButton(_ sender: Any) {
@@ -41,8 +45,11 @@ class HotelByTopicViewCell: UICollectionViewCell {
             return
         }
 
-        itemViewModel.hotel.isFavorite = !itemViewModel.hotel.isFavorite
-        self.favoriteImageView.image = itemViewModel.hotel.isFavorite ? R.image.ic_bookmark() : R.image.ic_bookmark_selected()
-        self.delegate?.hotelByTopicViewCellDidChangeFavoriteStatus(self, at: itemViewModel.hotel, isFavorite: itemViewModel.hotel.isFavorite)
+        self.isFavorite = !isFavorite
+        self.favoriteImageView.image = isFavorite ?
+        UIImage(named: "ic_bookmark_selected") : UIImage(named: "ic_bookmark")
+        self.delegate?.hotelByTopicViewCellDidChangeFavoriteStatus(self,
+                                                                   at: itemViewModel.hotel,
+                                                                   isFavorite: self.isFavorite)
     }
 }

@@ -7,7 +7,6 @@ target 'HeliaHotelBooking' do
 
   # Pods for HeliaHotelBooking
   pod 'SwiftLint'
-  pod 'R.swift'
   pod 'FirebaseCore'
   pod 'FirebaseAuth'
   pod 'FacebookLogin'
@@ -16,5 +15,6 @@ target 'HeliaHotelBooking' do
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
   pod 'SVProgressHUD' 
+  pod 'Kingfisher', '~> 7.0'
 
 end

@@ -13,7 +13,7 @@ final class FailedDialog: UIView {
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = R.image.ic_wrong()
+        imageView.image = UIImage(named: "ic_wrong")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -28,7 +28,7 @@ final class FailedDialog: UIView {
 
     private lazy var confirmButton: TapableView = {
         let confirmButton = TapableView()
-        confirmButton.backgroundColor = R.color.orangeYellow()
+        confirmButton.backgroundColor = UIColor(rgb: 0xF8D568)
         confirmButton.translatesAutoresizingMaskIntoConstraints = false
         confirmButton.cornerRadius = 20.0
         confirmButton.addTarget(self, action: #selector(confirmButtonDidTap), for: .touchUpInside)
@@ -40,7 +40,7 @@ final class FailedDialog: UIView {
         titleLabel.text = "Error"
         titleLabel.numberOfLines = 0
         titleLabel.font = Outfit.semiBoldFont(size: 20)
-        titleLabel.textColor = R.color.raisinBlack()
+        titleLabel.textColor = UIColor(rgb: 0x242124)
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         return titleLabel
@@ -51,7 +51,7 @@ final class FailedDialog: UIView {
         messageLabel.text = "Something went wrong, please try again later"
         messageLabel.numberOfLines = 2
         messageLabel.font = Outfit.regularFont(size: 14)
-        messageLabel.textColor = R.color.graniteGray()
+        messageLabel.textColor = UIColor(rgb: 0x615F5F)
         messageLabel.textAlignment = .center
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         return messageLabel
@@ -59,7 +59,7 @@ final class FailedDialog: UIView {
 
     private lazy var confirmLabel: UILabel = {
         let confirmLabel = UILabel()
-        confirmLabel.textColor = R.color.raisinBlack()
+        confirmLabel.textColor = UIColor(rgb: 0x242124)
         confirmLabel.text = "Confirm"
         confirmLabel.font = Outfit.mediumFont(size: 16)
         confirmLabel.textAlignment = .center
@@ -81,7 +81,7 @@ final class FailedDialog: UIView {
     // MARK: - Config
     private func config() {
         self.cornerRadius = 24.0
-        self.backgroundColor = R.color.smokyBlack()
+        self.backgroundColor = UIColor(rgb: 0x3D3938)
         self.addContentView()
         self.setUpConstraints()
     }

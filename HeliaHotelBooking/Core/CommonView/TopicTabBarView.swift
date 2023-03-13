@@ -114,4 +114,3 @@ extension TopicTabBarView: UICollectionViewDelegateFlowLayout {
         return TopicTabBarViewConst.cellSpacing
     }
 }
-

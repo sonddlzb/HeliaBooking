@@ -22,7 +22,7 @@ class PaymentNotificationDialogView: UIView {
     weak var delegate: PaymentNotificationDialogViewDelegate?
 
     static func loadView() -> PaymentNotificationDialogView {
-        return PaymentNotificationDialogView.loadView(fromNib: "PaymentNotificationDialogView")!
+        return PaymentNotificationDialogView.loadView(fromNib: "PaymentNotificationDialogView") ?? PaymentNotificationDialogView()
     }
 
     // MARK: - Public method

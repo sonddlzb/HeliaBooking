@@ -15,17 +15,14 @@ struct HomeHotelsByTopicItemViewModel {
         return URL(string: self.hotel.galleryURL.first ?? "")
     }
 
-    public func loadImageFrom(completion: @escaping (_ image: UIImage?) -> ()) {
-        DispatchQueue.global().async {
-            if let url = self.hotelThumbnailURL(), let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    completion(UIImage(data: data))
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
+    func checkFavoriteStatus(completion: @escaping (_ isSuccess: Bool) -> Void) {
+        Database.shared.getUserDetails { user in
+            guard let user = user else {
+                completion(false)
+                return
             }
+
+            completion(user.favoriteHotels.contains(hotel.id))
         }
     }
 }

@@ -33,7 +33,7 @@ class SignInWithPassWordViewController: UIViewController {
         label.text = "Forgot the password?"
         label.textAlignment = .center
         label.font = Outfit.regularFont(size: 17)
-        label.textColor = R.color.crayola()
+        label.textColor = .crayola
         tapableView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.centerXAnchor.constraint(equalTo: tapableView.centerXAnchor).isActive = true
@@ -83,7 +83,7 @@ class SignInWithPassWordViewController: UIViewController {
                 constant: Const.bottomPadding),
             loginByPasswordView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             loginByPasswordView.trailingAnchor
-            .constraint(equalTo: view.trailingAnchor),
+            .constraint(equalTo: view.trailingAnchor)
         ])
     }
 
@@ -127,10 +127,12 @@ extension SignInWithPassWordViewController: LoginByPasswordViewDelegate {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             SVProgressHUD.dismiss()
             guard let authResult = authResult, error == nil else {
-                FailedDialog.show(title: "Failed to sign in", message: error?.localizedDescription ?? "Something went wrong!")
+                FailedDialog.show(title: "Failed to sign in",
+                                  message: error?.localizedDescription ?? "Something went wrong!")
                 return
             }
 
+            UserManager.shared.authResult = authResult
             print("Login successfully!")
             self?.navigationController?.pushViewController(HomeViewController(), animated: true)
         }

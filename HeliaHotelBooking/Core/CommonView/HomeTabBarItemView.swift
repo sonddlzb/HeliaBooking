@@ -50,7 +50,7 @@ class HomeTabBarItemView: TapableView {
 
         self.nameLabel = UILabel()
         self.nameLabel.font = Outfit.regularFont(size: 12)
-        self.nameLabel.textColor = R.color.lightGray()
+        self.nameLabel.textColor = .lightGray
         self.nameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(nameLabel)
         self.nameLabel.text = self.homeTab.getItemName()

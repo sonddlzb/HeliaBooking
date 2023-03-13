@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension URL {
     var params: [String: Any] {
