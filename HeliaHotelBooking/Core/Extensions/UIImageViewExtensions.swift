@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 private struct Keys {
     static var gifFrames: UInt8 = 0
@@ -45,5 +46,10 @@ public extension UIImageView {
     func displayFirstFrameOfGif(data: Data) {
         let firstFrame = UIImage.getFirstFrameOfGifData(data)
         self.image = firstFrame
+    }
+
+    func setImage(with url: URL?, indicator: IndicatorType?) {
+        self.kf.indicatorType = indicator ?? .none
+        self.kf.setImage(with: url)
     }
 }

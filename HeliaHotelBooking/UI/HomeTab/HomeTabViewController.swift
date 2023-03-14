@@ -10,15 +10,21 @@ import FirebaseAuth
 
 class HomeTabViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet private weak var homeHotelsByTopicView: HomeHotelsByTopicView!
     @IBOutlet private weak var nameLabel: UILabel!
 
+    // MARK: - Variables
+    private var currentTopic = "Recommended"
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.config()
-        self.fetchData(topic: "Recommended")
+        self.fetchData(topic: self.currentTopic)
     }
 
+    // MARK: - Config
     private func config() {
         self.homeHotelsByTopicView.delegate = self
         if let email = Auth.auth().currentUser?.email, let index = email.firstIndex(of: "@") {
@@ -39,6 +45,13 @@ class HomeTabViewController: UIViewController {
             }
         }
     }
+
+    // MARK: - Actions
+    @IBAction func didTapMyBookmarkButton(_ sender: Any) {
+        let myBookmarkViewController = MyBookmarkViewController()
+        myBookmarkViewController.delegate = self
+        self.navigationController?.pushViewController(myBookmarkViewController, animated: true)
+    }
 }
 
 // MARK: - HomeHotelsByTopicViewDelegate
@@ -48,6 +61,13 @@ extension HomeTabViewController: HomeHotelsByTopicViewDelegate {
     }
 
     func homeHotelsByTopicView(_ homeHotelsByTopicView: HomeHotelsByTopicView, didSelectAt topic: String) {
+        self.currentTopic = topic
         self.fetchData(topic: topic)
+    }
+}
+
+extension HomeTabViewController: MyBookmarkViewControllerDelegate {
+    func myBookmarkViewControllerWantToReloadData(_ myBookmarkViewController: MyBookmarkViewController) {
+        self.fetchData(topic: self.currentTopic)
     }
 }

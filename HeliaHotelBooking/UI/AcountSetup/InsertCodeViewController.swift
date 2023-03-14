@@ -37,20 +37,21 @@ class InsertCodeViewController: UIViewController {
     }
 
     @IBAction func btnVerifyDidTap(_ sender: Any) {
-        //verify code
+        // verify code
     }
 
 }
 
 extension InsertCodeViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
-        replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         let maxLength = 1
         let currentString = (textField.text ?? "") as NSString
         let newString = currentString.replacingCharacters(in: range, with: string)
         return newString.count <= maxLength
     }
-    
+
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if self.textField1.text?.count == 1 {
             self.textField2.becomeFirstResponder()
@@ -81,15 +82,14 @@ extension InsertCodeViewController: UITextFieldDelegate {
             textField2IsEditing = false
         }
     }
-    
+
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        //textField.borderColor = R.color.crayola()
+        textField.borderColor = .crayola
         return true
     }
-    
+
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        //textField.borderColor = R.color.lightGray()
+        textField.borderColor = .lightGray
         return true
     }
-    
 }

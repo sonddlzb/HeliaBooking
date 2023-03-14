@@ -50,8 +50,8 @@ class SignUpViewController: UIViewController {
     private func config() {
         fullNameTextField.placeholder = "Full Name"
         fullNameTextField.isHighlightedWhenEditting = true
-//        fullNameTextField.backgroundColor = R.color.lotion()
-//        fullNameTextField.borderColor = R.color.crayola()
+        fullNameTextField.backgroundColor = .lightGray
+        fullNameTextField.borderColor = .crayola
         fullNameTextField.textField.paddingLeft = 10
         fullNameTextField.cornerRadius = 12
         fullNameTextField.delegate = self
@@ -59,39 +59,39 @@ class SignUpViewController: UIViewController {
 
         nicknameTextField.placeholder = "Nickname"
         nicknameTextField.isHighlightedWhenEditting = true
-//        nicknameTextField.backgroundColor = R.color.lotion()
-//        nicknameTextField.borderColor = R.color.crayola()
+        nicknameTextField.backgroundColor = .lightGray
+        nicknameTextField.borderColor = .crayola
         nicknameTextField.textField.paddingLeft = 10
         nicknameTextField.cornerRadius = 12
         nicknameTextField.delegate = self
 
         dateOfBirthTextField.placeholder = "Date of Birth"
         dateOfBirthTextField.isHighlightedWhenEditting = true
-//        dateOfBirthTextField.backgroundColor = R.color.lotion()
-//        dateOfBirthTextField.borderColor = R.color.crayola()
+        dateOfBirthTextField.backgroundColor = .lightGray
+        dateOfBirthTextField.borderColor = .crayola
         dateOfBirthTextField.textField.paddingLeft = 10
         dateOfBirthTextField.cornerRadius = 12
         dateOfBirthTextField.delegate = self
         dateOfBirthTextField.isRightButtonEnable = true
-        //dateOfBirthTextField.setRightImage(image: R.image.ic_calendar())
+        dateOfBirthTextField.setRightImage(image: UIImage(named: "ic_calendar"))
 
         phoneNumberTextField.placeholder = "Phone Number"
         phoneNumberTextField.isHighlightedWhenEditting = true
-//        phoneNumberTextField.backgroundColor = R.color.lotion()
-//        phoneNumberTextField.borderColor = R.color.crayola()
+        phoneNumberTextField.backgroundColor = .lightGray
+        phoneNumberTextField.borderColor = .crayola
         phoneNumberTextField.textField.paddingLeft = 10
         phoneNumberTextField.cornerRadius = 12
         phoneNumberTextField.delegate = self
 
         genderTextField.placeholder = "Gender"
         genderTextField.isHighlightedWhenEditting = true
-//        genderTextField.backgroundColor = R.color.lotion()
-//        genderTextField.borderColor = R.color.crayola()
+        genderTextField.backgroundColor = .lightGray
+        genderTextField.borderColor = .crayola
         genderTextField.textField.paddingLeft = 10
         genderTextField.cornerRadius = 12
         genderTextField.delegate = self
         genderTextField.isRightButtonEnable = true
-//        genderTextField.setRightImage(image: R.image.ic_arrow_down())
+        genderTextField.setRightImage(image: UIImage(named: "ic_arrow_down"))
 
         self.imagePicker.delegate = self
         self.datePicker.maximumDate = Date()
@@ -128,7 +128,9 @@ class SignUpViewController: UIViewController {
                     }
                 }
             } else {
-                let alert = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Warning", 
+                                              message: "You don't have camera",
+                                              preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
@@ -245,15 +247,14 @@ class SignUpViewController: UIViewController {
         }
 
         SVProgressHUD.show()
-        let userId = UUID().uuidString
         if let image = self.avtImageView.image {
-            let userEntity = UserEntity(id: userId,
-                                        fullName: self.fullNameTextField.text,
+            let userEntity = UserEntity(fullName: self.fullNameTextField.text,
                                         nickname: self.nicknameTextField.text,
                                         dateOfBirth: self.currentDate.formatDate(),
                                         phoneNumber: self.phoneNumberTextField.text,
                                         gender: self.genderTextField.text,
-                                        avtURL: "")
+                                        avtURL: "",
+                                        favoriteHotels: [])
             Database.shared.addNewUser(email: email, password: password, userEntity: userEntity, image: image, completion: { error in
                 SVProgressHUD.dismiss()
                 if let error = error {
@@ -306,6 +307,6 @@ extension SignUpViewController {
 // MARK: - NotificationDialogViewDelegate
 extension SignUpViewController: NotificationDialogViewDelegate {
     func notificationDialogViewDidTapOk(_ notificationDialogView: NotificationDialogView) {
-        //route to Home
+        // route to Home
     }
 }

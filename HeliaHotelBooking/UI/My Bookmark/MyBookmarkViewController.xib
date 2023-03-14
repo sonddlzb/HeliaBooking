@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-SemiBold.otf">
+            <string>Outfit-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyBookmarkViewController" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="dP2-D0-kTb" id="Bbr-zX-Umw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJb-CB-eg1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdc-AU-ZeW" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                            <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tIH-g3-4qI">
+                                    <rect key="frame" x="0.0" y="7.5" width="40" height="25"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="tIH-g3-4qI" firstAttribute="leading" secondItem="gdc-AU-ZeW" secondAttribute="leading" id="AMS-CL-3lx"/>
+                                <constraint firstAttribute="width" secondItem="gdc-AU-ZeW" secondAttribute="height" multiplier="1:1" id="PPN-S3-FVW"/>
+                                <constraint firstAttribute="bottom" secondItem="tIH-g3-4qI" secondAttribute="bottom" constant="5" id="QEv-Kw-WW8"/>
+                                <constraint firstItem="tIH-g3-4qI" firstAttribute="top" secondItem="gdc-AU-ZeW" secondAttribute="top" constant="5" id="TI4-hX-ObH"/>
+                                <constraint firstAttribute="trailing" secondItem="tIH-g3-4qI" secondAttribute="trailing" id="zwv-wh-upI"/>
+                            </constraints>
+                            <connections>
+                                <action selector="backButtonDidTap:" destination="-1" eventType="touchUpInside" id="HLb-qO-TZI"/>
+                            </connections>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Bookmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-PC-fao">
+                            <rect key="frame" x="60" y="0.0" width="150.5" height="40"/>
+                            <fontDescription key="fontDescription" name="Outfit-SemiBold" family="Outfit" pointSize="24"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="gdc-AU-ZeW" firstAttribute="top" secondItem="hJb-CB-eg1" secondAttribute="top" id="7iB-O0-kdH"/>
+                        <constraint firstItem="dgN-PC-fao" firstAttribute="leading" secondItem="gdc-AU-ZeW" secondAttribute="trailing" constant="10" id="AiG-ia-yAC"/>
+                        <constraint firstAttribute="height" constant="40" id="GPe-0R-Sr9"/>
+                        <constraint firstItem="dgN-PC-fao" firstAttribute="top" secondItem="hJb-CB-eg1" secondAttribute="top" id="KiO-18-9Xd"/>
+                        <constraint firstAttribute="bottom" secondItem="dgN-PC-fao" secondAttribute="bottom" id="UdG-4z-Mee"/>
+                        <constraint firstItem="gdc-AU-ZeW" firstAttribute="leading" secondItem="hJb-CB-eg1" secondAttribute="leading" constant="10" id="V3Y-3j-lw1"/>
+                        <constraint firstAttribute="bottom" secondItem="gdc-AU-ZeW" secondAttribute="bottom" id="lQD-GR-vbL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwG-Nl-vDz">
+                    <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dP2-D0-kTb">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zpr-4v-e6g">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="dP2-D0-kTb" secondAttribute="trailing" id="Ifp-bG-LK0"/>
+                        <constraint firstAttribute="bottom" secondItem="dP2-D0-kTb" secondAttribute="bottom" id="XhV-U3-x3m"/>
+                        <constraint firstItem="dP2-D0-kTb" firstAttribute="leading" secondItem="QwG-Nl-vDz" secondAttribute="leading" id="fyO-aD-qmD"/>
+                        <constraint firstItem="dP2-D0-kTb" firstAttribute="top" secondItem="QwG-Nl-vDz" secondAttribute="top" id="pLM-gN-FKZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QwG-Nl-vDz" secondAttribute="trailing" id="EoZ-bh-g3E"/>
+                <constraint firstItem="hJb-CB-eg1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="LHM-GD-t3d"/>
+                <constraint firstItem="hJb-CB-eg1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="frZ-2j-E28"/>
+                <constraint firstItem="QwG-Nl-vDz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gCZ-di-4bQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QwG-Nl-vDz" secondAttribute="bottom" id="h02-k8-4PD"/>
+                <constraint firstItem="QwG-Nl-vDz" firstAttribute="top" secondItem="hJb-CB-eg1" secondAttribute="bottom" constant="20" id="rFm-cE-Ecf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hJb-CB-eg1" secondAttribute="trailing" id="tAx-63-GvK"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="80"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

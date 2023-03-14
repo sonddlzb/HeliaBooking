@@ -51,8 +51,8 @@ class LoginByPasswordView: UIView {
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.placeholder = "Email"
         emailTextField.isHighlightedWhenEditting = true
-        emailTextField.backgroundColor = R.color.lotion()
-        emailTextField.borderColor = R.color.crayola()
+        emailTextField.backgroundColor = .lotion
+        emailTextField.borderColor = .crayola
         emailTextField.textField.paddingLeft = 10
         emailTextField.cornerRadius = 12
         emailTextField.delegate = self
@@ -65,8 +65,8 @@ class LoginByPasswordView: UIView {
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = "Password"
         passwordTextField.isHighlightedWhenEditting = true
-        passwordTextField.backgroundColor = R.color.lotion()
-        passwordTextField.borderColor = R.color.crayola()
+        passwordTextField.backgroundColor = .lotion
+        passwordTextField.borderColor = .crayola
         passwordTextField.textField.paddingLeft = 10
         passwordTextField.cornerRadius = 12
         passwordTextField.isSecureText = true
@@ -78,7 +78,7 @@ class LoginByPasswordView: UIView {
     private lazy var rememberImageView: UIImageView = {
         let rememberImageView = UIImageView()
         rememberImageView.translatesAutoresizingMaskIntoConstraints = false
-        rememberImageView.borderColor = R.color.crayola()
+        rememberImageView.borderColor = .crayola
         rememberImageView.borderWidth = 2
         rememberImageView.cornerRadius = 5
 
@@ -89,7 +89,7 @@ class LoginByPasswordView: UIView {
         let confirmLabel = UILabel()
         confirmLabel.translatesAutoresizingMaskIntoConstraints = false
         confirmLabel.text = "Sign in"
-        confirmLabel.backgroundColor = R.color.lightGray()
+        confirmLabel.backgroundColor = .lightGray
         confirmLabel.textColor = .white
         confirmLabel.textAlignment = .center
         confirmLabel.font = Outfit.regularFont(size: 14)
@@ -160,20 +160,27 @@ class LoginByPasswordView: UIView {
 
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.containerView.topAnchor),
-            self.titleLabel.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: Const.leftPadding),
-            self.titleLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor, constant: Const.rightPadding),
+            self.titleLabel.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor,
+                                                     constant: Const.leftPadding),
+            self.titleLabel.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor,
+                                                      constant: Const.rightPadding),
 
-            self.emailTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 40.0),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: Const.leftPadding),
+            self.emailTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor,
+                                                     constant: 40.0),
+            self.emailTextField.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor,
+                                                         constant: Const.leftPadding),
             self.emailTextField.heightAnchor.constraint(equalToConstant: 50.0),
             self.emailTextField.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
 
-            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 24.0),
-            self.passwordTextField.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: Const.leftPadding),
+            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor,
+                                                        constant: 24.0),
+            self.passwordTextField.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor,
+                                                            constant: Const.leftPadding),
             self.passwordTextField.heightAnchor.constraint(equalToConstant: 50.0),
             self.passwordTextField.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
 
-            self.rememberContainerView.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 20.0),
+            self.rememberContainerView.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor,
+                                                            constant: 20.0),
             self.rememberContainerView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
             self.rememberContainerView.heightAnchor.constraint(equalToConstant: 16.0),
 
@@ -185,11 +192,14 @@ class LoginByPasswordView: UIView {
             self.rememberLabel.topAnchor.constraint(equalTo: self.rememberContainerView.topAnchor),
             self.rememberLabel.trailingAnchor.constraint(equalTo: self.rememberContainerView.trailingAnchor),
             self.rememberLabel.bottomAnchor.constraint(equalTo: self.rememberContainerView.bottomAnchor),
-            self.rememberLabel.leadingAnchor.constraint(equalTo: self.rememberImageView.trailingAnchor, constant: 10),
+            self.rememberLabel.leadingAnchor.constraint(equalTo: self.rememberImageView.trailingAnchor,
+                                                        constant: 10),
 
-            self.confirmButton.topAnchor.constraint(equalTo: self.rememberContainerView.bottomAnchor, constant: 20.0),
+            self.confirmButton.topAnchor.constraint(equalTo: self.rememberContainerView.bottomAnchor,
+                                                    constant: 20.0),
             self.confirmButton.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
-            self.confirmButton.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor, constant: Const.leftPadding),
+            self.confirmButton.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor,
+                                                        constant: Const.leftPadding),
             self.confirmButton.heightAnchor.constraint(equalToConstant: 50.0),
             self.confirmButton.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor)
         ])
@@ -202,7 +212,9 @@ class LoginByPasswordView: UIView {
     }
 
     @objc func didTapConfirmButton(_ sender: Any) {
-        self.delegate?.loginByPasswordViewDidTapConfirm(self, email: self.emailTextField.text, password: self.passwordTextField.text)
+        self.delegate?.loginByPasswordViewDidTapConfirm(self,
+                                                        email: self.emailTextField.text,
+                                                        password: self.passwordTextField.text)
     }
 
     // MARK: - Helps
@@ -231,6 +243,6 @@ extension LoginByPasswordView: SolarTextFieldDelegate {
     func solarTextFieldDidChangeValue(_ textField: SolarTextField) {
         let isValidInput = self.validateEmail() && self.validatePassword()
         self.confirmButton.isUserInteractionEnabled = isValidInput
-        self.confirmLabel.backgroundColor = isValidInput ? R.color.crayola() : R.color.lightGray()
+        self.confirmLabel.backgroundColor = isValidInput ? .crayola : .lightGray
     }
 }

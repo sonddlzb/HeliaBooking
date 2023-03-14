@@ -32,7 +32,7 @@ class ConfirmDialogView: UIView {
     }
 
     static func loadView() -> ConfirmDialogView {
-        return ConfirmDialogView.loadView(fromNib: "ConfirmDialogView")!
+        return ConfirmDialogView.loadView(fromNib: "ConfirmDialogView") ?? ConfirmDialogView()
     }
 
     // MARK: - Public method

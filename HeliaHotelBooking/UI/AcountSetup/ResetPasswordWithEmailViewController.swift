@@ -22,8 +22,8 @@ class ResetPasswordWithEmailViewController: UIViewController {
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.placeholder = "Email"
         emailTextField.isHighlightedWhenEditting = true
-        emailTextField.backgroundColor = R.color.lotion()
-        emailTextField.borderColor = R.color.crayola()
+        emailTextField.backgroundColor = .lightGray
+        emailTextField.borderColor = .crayola
         emailTextField.textField.paddingLeft = 10
         emailTextField.cornerRadius = 12
     }
@@ -32,10 +32,10 @@ class ResetPasswordWithEmailViewController: UIViewController {
         let email = emailTextField.text
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if error != nil {
-                R.nib.notificationDialogView(withOwner: self)?.show(in: self.view, title: "Check email again",
-                    message: "You entered the wrong email", image: R.image.ic_wrong())
+                NotificationDialogView.loadView().show(in: self.view, title: "Check email again",
+                                                       message: "You entered the wrong email", image: UIImage(named: "ic_wrong"))
             } else {
-                R.nib.notificationDialogView(withOwner: self)?.show(in: self.view, title: "Check your email",
+                NotificationDialogView.loadView().show(in: self.view, title: "Check your email",
                     message: "Please check your email to complete the password reset")
                 self.tapableViewSendEmail.isHidden = true
                 self.tapableViewLoginAgain.isHidden = false

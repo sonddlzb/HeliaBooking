@@ -21,7 +21,7 @@ class NotificationDialogView: UIView {
     @IBOutlet weak var mesageImage: UIImageView!
     
     static func loadView() -> NotificationDialogView {
-        return NotificationDialogView.loadView(fromNib: "NotificationDialogView")!
+        return NotificationDialogView.loadView(fromNib: "NotificationDialogView") ?? NotificationDialogView()
     }
 
     weak var delegate: NotificationDialogViewDelegate?
