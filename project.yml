@@ -24,6 +24,7 @@
          INFOPLIST_FILE: HeliaHotelBooking/App/Info.plist
          SWIFT_VERSION: 5
          TARGETED_DEVICE_FAMILY: 1
+         PRODUCT_BUNDLE_IDENTIFIER: vn.yopaz.HeliaHotelBooking
      sources:
        - path: HeliaHotelBooking
 
