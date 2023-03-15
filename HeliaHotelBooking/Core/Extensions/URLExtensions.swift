@@ -55,4 +55,19 @@ public extension URL {
         let fullPath = "\(userPath)\(resourceUri)"
         self.init(fileURLWithPath: fullPath)
     }
+
+    func loadImage(completion: @escaping (_ image: UIImage?) -> ()) {
+        DispatchQueue.global().async {
+          if let data = try? Data(contentsOf: self) {
+            DispatchQueue.main.async {
+              completion(UIImage(data: data))
+            }
+          } else {
+            DispatchQueue.main.async {
+              completion(nil)
+            }
+          }
+        }
+      }
+
 }

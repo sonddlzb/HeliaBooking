@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Light.otf">
+            <string>Outfit-Light</string>
+        </array>
+        <array key="Outfit-Regular.otf">
+            <string>Outfit-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="recentlyBooked" reuseIdentifier="" id="gTV-IL-0wX" customClass="RecentlyBookedCollectionViewCell" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="160"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="404" height="160"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GSa-fn-1SG" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                        <rect key="frame" x="12" y="10" width="380" height="140"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="President Hotel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsq-YW-aPA">
+                                <rect key="frame" x="120" y="9.9999999999999982" width="206" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Paris, France" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zs-gO-4VZ">
+                                <rect key="frame" x="120" y="40.333333333333336" width="161" height="17"/>
+                                <fontDescription key="fontDescription" name="Outfit-Light" family="Outfit" pointSize="16"/>
+                                <color key="textColor" name="Smoky Black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjD-0A-cGY">
+                                <rect key="frame" x="341.33333333333331" y="10" width="28.666666666666686" height="18"/>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="17"/>
+                                <color key="textColor" name="Crayola"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oe0-Yo-6YK">
+                                <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="jJM-qD-hmc"/>
+                                    <constraint firstAttribute="height" constant="100" id="tsW-xU-bAN"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ night" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wt8-PN-8j7">
+                                <rect key="frame" x="321.33333333333331" y="36" width="48.666666666666686" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48.666666666666686" id="Iba-Hd-uZG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="13"/>
+                                <color key="textColor" name="Smoky Black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twK-Fg-83P" customClass="CheckBox" customModule="HeliaHotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="346" y="63" width="24" height="24"/>
+                                <color key="backgroundColor" name="Gray99 color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Izo-PD-sJT"/>
+                                    <constraint firstAttribute="width" constant="24" id="gI2-C6-XFL"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_bookmark_selected">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uNd-tO-8hs">
+                                <rect key="frame" x="50" y="60" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uNd-tO-8hs" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="60" id="6xQ-Ul-XrB"/>
+                            <constraint firstItem="twK-Fg-83P" firstAttribute="top" secondItem="0Zs-gO-4VZ" secondAttribute="bottom" constant="5.6666666666666572" id="C2o-K7-2LS"/>
+                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vsq-YW-aPA" secondAttribute="trailing" constant="54" id="Qar-8o-KpT"/>
+                            <constraint firstItem="vsq-YW-aPA" firstAttribute="leading" secondItem="Oe0-Yo-6YK" secondAttribute="trailing" constant="10" id="THl-o4-aLc"/>
+                            <constraint firstItem="0Zs-gO-4VZ" firstAttribute="leading" secondItem="Oe0-Yo-6YK" secondAttribute="trailing" constant="10" id="UnO-y8-yRR"/>
+                            <constraint firstItem="Oe0-Yo-6YK" firstAttribute="leading" secondItem="GSa-fn-1SG" secondAttribute="leading" constant="10" id="VsD-qd-twe"/>
+                            <constraint firstAttribute="trailing" secondItem="Wt8-PN-8j7" secondAttribute="trailing" constant="10" id="epU-od-EEN"/>
+                            <constraint firstItem="vsq-YW-aPA" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="10" id="ftO-QH-7Su"/>
+                            <constraint firstAttribute="bottom" secondItem="uNd-tO-8hs" secondAttribute="bottom" constant="60" id="jSf-Mk-K4K"/>
+                            <constraint firstItem="IjD-0A-cGY" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="10" id="o7e-L3-4eu"/>
+                            <constraint firstItem="0Zs-gO-4VZ" firstAttribute="leading" secondItem="uNd-tO-8hs" secondAttribute="trailing" constant="50" id="uPZ-wl-ELP"/>
+                            <constraint firstItem="twK-Fg-83P" firstAttribute="trailing" secondItem="Wt8-PN-8j7" secondAttribute="trailing" id="wVs-d8-2zS"/>
+                            <constraint firstItem="0Zs-gO-4VZ" firstAttribute="top" secondItem="vsq-YW-aPA" secondAttribute="bottom" constant="10" id="wmL-5x-Thn"/>
+                            <constraint firstItem="IjD-0A-cGY" firstAttribute="trailing" secondItem="Wt8-PN-8j7" secondAttribute="trailing" id="x7I-cL-COh"/>
+                            <constraint firstItem="uNd-tO-8hs" firstAttribute="leading" secondItem="GSa-fn-1SG" secondAttribute="leading" constant="50" id="xXA-qR-HDq"/>
+                            <constraint firstItem="Oe0-Yo-6YK" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="10" id="xZ2-xW-8kX"/>
+                            <constraint firstItem="Wt8-PN-8j7" firstAttribute="leading" secondItem="0Zs-gO-4VZ" secondAttribute="trailing" constant="40.333333333333314" id="xtU-Mo-SFx"/>
+                            <constraint firstItem="Wt8-PN-8j7" firstAttribute="top" secondItem="IjD-0A-cGY" secondAttribute="bottom" constant="8" id="yD4-nr-mTz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="GSa-fn-1SG" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3h6-u3-ff0"/>
+                <constraint firstItem="GSa-fn-1SG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="D9a-pW-idZ"/>
+                <constraint firstItem="GSa-fn-1SG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="KoS-5Q-Yyp"/>
+                <constraint firstItem="GSa-fn-1SG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="h53-m5-ho4"/>
+            </constraints>
+            <size key="customSize" width="404" height="160"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="galleryImage" destination="Oe0-Yo-6YK" id="a8o-48-SLL"/>
+                <outlet property="locationLabel" destination="0Zs-gO-4VZ" id="JIz-yo-3FK"/>
+                <outlet property="nameLabel" destination="vsq-YW-aPA" id="MDj-u5-SBS"/>
+                <outlet property="priceLabel" destination="IjD-0A-cGY" id="vtb-jM-uCe"/>
+                <outlet property="uiActivity" destination="uNd-tO-8hs" id="MmB-ss-txM"/>
+            </connections>
+            <point key="canvasLocation" x="172.51908396946564" y="35.91549295774648"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_bookmark_selected" width="64" height="64"/>
+        <namedColor name="Crayola">
+            <color red="0.10199999809265137" green="0.71399998664855957" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Gray99 color">
+            <color red="0.99199998378753662" green="0.99199998378753662" blue="0.99199998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Smoky Black">
+            <color red="0.043000001460313797" green="0.050999999046325684" blue="0.059000000357627869" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
