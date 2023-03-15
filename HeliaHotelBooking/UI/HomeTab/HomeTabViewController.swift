@@ -52,6 +52,10 @@ class HomeTabViewController: UIViewController {
         myBookmarkViewController.delegate = self
         self.navigationController?.pushViewController(myBookmarkViewController, animated: true)
     }
+
+    @IBAction func didTapSeeAllButton(_ sender: Any) {
+        //next screen
+    }
 }
 
 // MARK: - HomeHotelsByTopicViewDelegate
