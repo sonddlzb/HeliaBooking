@@ -120,9 +120,10 @@ class Database {
         }
     }
 
-    func getHotelsSortBynumberOfBookedTimes(completion: @escaping (_ listHotels: [Hotel]) -> Void) {
+    func getHotelsSortBynumberOfBookedTimes(size: Int, completion: @escaping (_ listHotels: [Hotel]) -> Void) {
         self.database.collection(Const.hotelsCollectionName)
             .order(by: ConstFirebaseField.numberOfBookedTimes, descending: true)
+            .limit(to: size)
             .getDocuments { querySnapshot, err in
             if let err = err {
                 print("Error getting documents: \(err)")

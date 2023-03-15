@@ -12,7 +12,6 @@ class RecentlyBookedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var galleryImage: UIImageView!
-    @IBOutlet weak var uiActivity: UIActivityIndicatorView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,10 +22,7 @@ class RecentlyBookedCollectionViewCell: UICollectionViewCell {
         self.priceLabel.text = String(price)
         self.nameLabel.text = name
         if let url = URL(string: urlImage) {
-            url.loadImage { image in
-                self.galleryImage.image = image
-                self.uiActivity.isHidden = true
-            }
+            galleryImage.setImage(with: url, indicator: .activity)
         }
     }
 

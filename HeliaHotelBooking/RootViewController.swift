@@ -13,7 +13,7 @@ class RootViewController: BaseViewControler {
     override func viewDidLoad() {
         super.viewDidLoad()
         if Auth.auth().currentUser != nil {
-            navigationController?.pushViewController(TestRecentlyBookedViewController(), animated: true)
+            navigationController?.pushViewController(HomeViewController(), animated: true)
         } else {
             navigationController?.pushViewController(IntroductionViewController(), animated: true)
         }

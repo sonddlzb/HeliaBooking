@@ -13,7 +13,8 @@ struct Constants {
 }
 
 class RecentlyBookedView: UIView {
-        private lazy var collectionView: UICollectionView = {
+    var limitCollectionViewCell: Int = 10
+    private lazy var collectionView: UICollectionView = {
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
             layout.sectionInset = UIEdgeInsets(top: 0.0, left: 16.0, bottom: 0.0, right: 16.0)
             layout.scrollDirection = .vertical
@@ -35,7 +36,7 @@ class RecentlyBookedView: UIView {
     }
 
     private func setUpView() {
-        self.collectionView.backgroundColor = R.color.lotion()
+        self.collectionView.backgroundColor = .lotion
         self.addSubview(self.collectionView)
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.fitSuperviewConstraint()
@@ -47,12 +48,11 @@ class RecentlyBookedView: UIView {
     }
 
     private func initData() {
-        Database.shared.getHotelsSortBynumberOfBookedTimes { listHotels in
+        Database.shared.getHotelsSortBynumberOfBookedTimes(size: limitCollectionViewCell) { listHotels in
             self.listRecentlyBooked = listHotels
             self.collectionView.reloadData()
         }
     }
-
 }
 
 extension RecentlyBookedView: UICollectionViewDelegate, UICollectionViewDataSource {

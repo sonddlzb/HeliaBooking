@@ -83,13 +83,9 @@
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uNd-tO-8hs">
-                                <rect key="frame" x="50" y="60" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="uNd-tO-8hs" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="60" id="6xQ-Ul-XrB"/>
                             <constraint firstItem="twK-Fg-83P" firstAttribute="top" secondItem="0Zs-gO-4VZ" secondAttribute="bottom" constant="5.6666666666666572" id="C2o-K7-2LS"/>
                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vsq-YW-aPA" secondAttribute="trailing" constant="54" id="Qar-8o-KpT"/>
                             <constraint firstItem="vsq-YW-aPA" firstAttribute="leading" secondItem="Oe0-Yo-6YK" secondAttribute="trailing" constant="10" id="THl-o4-aLc"/>
@@ -97,13 +93,10 @@
                             <constraint firstItem="Oe0-Yo-6YK" firstAttribute="leading" secondItem="GSa-fn-1SG" secondAttribute="leading" constant="10" id="VsD-qd-twe"/>
                             <constraint firstAttribute="trailing" secondItem="Wt8-PN-8j7" secondAttribute="trailing" constant="10" id="epU-od-EEN"/>
                             <constraint firstItem="vsq-YW-aPA" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="10" id="ftO-QH-7Su"/>
-                            <constraint firstAttribute="bottom" secondItem="uNd-tO-8hs" secondAttribute="bottom" constant="60" id="jSf-Mk-K4K"/>
                             <constraint firstItem="IjD-0A-cGY" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="10" id="o7e-L3-4eu"/>
-                            <constraint firstItem="0Zs-gO-4VZ" firstAttribute="leading" secondItem="uNd-tO-8hs" secondAttribute="trailing" constant="50" id="uPZ-wl-ELP"/>
                             <constraint firstItem="twK-Fg-83P" firstAttribute="trailing" secondItem="Wt8-PN-8j7" secondAttribute="trailing" id="wVs-d8-2zS"/>
                             <constraint firstItem="0Zs-gO-4VZ" firstAttribute="top" secondItem="vsq-YW-aPA" secondAttribute="bottom" constant="10" id="wmL-5x-Thn"/>
                             <constraint firstItem="IjD-0A-cGY" firstAttribute="trailing" secondItem="Wt8-PN-8j7" secondAttribute="trailing" id="x7I-cL-COh"/>
-                            <constraint firstItem="uNd-tO-8hs" firstAttribute="leading" secondItem="GSa-fn-1SG" secondAttribute="leading" constant="50" id="xXA-qR-HDq"/>
                             <constraint firstItem="Oe0-Yo-6YK" firstAttribute="top" secondItem="GSa-fn-1SG" secondAttribute="top" constant="10" id="xZ2-xW-8kX"/>
                             <constraint firstItem="Wt8-PN-8j7" firstAttribute="leading" secondItem="0Zs-gO-4VZ" secondAttribute="trailing" constant="40.333333333333314" id="xtU-Mo-SFx"/>
                             <constraint firstItem="Wt8-PN-8j7" firstAttribute="top" secondItem="IjD-0A-cGY" secondAttribute="bottom" constant="8" id="yD4-nr-mTz"/>
@@ -130,7 +123,6 @@
                 <outlet property="locationLabel" destination="0Zs-gO-4VZ" id="JIz-yo-3FK"/>
                 <outlet property="nameLabel" destination="vsq-YW-aPA" id="MDj-u5-SBS"/>
                 <outlet property="priceLabel" destination="IjD-0A-cGY" id="vtb-jM-uCe"/>
-                <outlet property="uiActivity" destination="uNd-tO-8hs" id="MmB-ss-txM"/>
             </connections>
             <point key="canvasLocation" x="172.51908396946564" y="35.91549295774648"/>
         </collectionViewCell>
