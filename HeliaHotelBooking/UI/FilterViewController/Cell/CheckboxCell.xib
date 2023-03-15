@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Outfit-Regular.otf">
+            <string>Outfit-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CheckboxCell" customModule="HeliaHotelBooking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="234" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="234" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bda-cU-UkR">
+                        <rect key="frame" x="0.0" y="0.0" width="234" height="30"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQS-GS-boP" customClass="TapableView" customModule="HeliaHotelBooking" customModuleProvider="target">
+                                <rect key="frame" x="5" y="5" width="20" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gtg-KO-SUl">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Gtg-KO-SUl" firstAttribute="top" secondItem="kQS-GS-boP" secondAttribute="top" id="1S2-st-Psv"/>
+                                    <constraint firstItem="Gtg-KO-SUl" firstAttribute="leading" secondItem="kQS-GS-boP" secondAttribute="leading" id="2CG-G8-ucn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gtg-KO-SUl" secondAttribute="bottom" id="A0f-Tb-FSR"/>
+                                    <constraint firstAttribute="width" secondItem="kQS-GS-boP" secondAttribute="height" id="nzP-fQ-ylN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gtg-KO-SUl" secondAttribute="trailing" id="yCs-Me-tmA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didTapCheckbox:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JYm-G0-ENt"/>
+                                </connections>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swimming Pool" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKR-VI-FNu">
+                                <rect key="frame" x="35" y="5.5" width="121" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Outfit-Regular" family="Outfit" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kQS-GS-boP" firstAttribute="top" secondItem="bda-cU-UkR" secondAttribute="top" constant="5" id="Yjl-ji-A4e"/>
+                            <constraint firstItem="cKR-VI-FNu" firstAttribute="centerY" secondItem="bda-cU-UkR" secondAttribute="centerY" id="fAb-DV-SVJ"/>
+                            <constraint firstItem="kQS-GS-boP" firstAttribute="leading" secondItem="bda-cU-UkR" secondAttribute="leading" constant="5" id="jbn-TU-PAe"/>
+                            <constraint firstAttribute="bottom" secondItem="kQS-GS-boP" secondAttribute="bottom" constant="5" id="rKq-Cl-nHc"/>
+                            <constraint firstItem="cKR-VI-FNu" firstAttribute="leading" secondItem="kQS-GS-boP" secondAttribute="trailing" constant="10" id="vUd-kM-m1A"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="bda-cU-UkR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ub1-R3-LNE"/>
+                <constraint firstItem="bda-cU-UkR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WdY-p4-kod"/>
+                <constraint firstAttribute="bottom" secondItem="bda-cU-UkR" secondAttribute="bottom" id="Y5k-gp-T22"/>
+                <constraint firstAttribute="trailing" secondItem="bda-cU-UkR" secondAttribute="trailing" id="ovh-5o-PBY"/>
+            </constraints>
+            <size key="customSize" width="234" height="84"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="6"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imageView" destination="Gtg-KO-SUl" id="zKd-6L-DSZ"/>
+                <outlet property="nameLabel" destination="cKR-VI-FNu" id="D6W-e8-cg7"/>
+            </connections>
+            <point key="canvasLocation" x="275.36231884057975" y="66.964285714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
