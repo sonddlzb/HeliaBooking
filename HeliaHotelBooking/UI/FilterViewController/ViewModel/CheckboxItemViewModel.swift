@@ -10,4 +10,5 @@ import Foundation
 struct CheckboxItemViewModel {
     var name: String
     var isSelected: Bool
+    var isFacility: Bool
 }

@@ -34,6 +34,11 @@ class TopicTabBarView: UIView {
     weak var delegate: TopicTabBarViewDelegate?
     weak var datasource: TopicTabBarViewDatasource?
     private var selectedTopic = ""
+    var fontSize: Int = 18 {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -104,7 +109,7 @@ extension TopicTabBarView: UICollectionViewDelegate, UICollectionViewDataSource 
 // MARK: UICollectionViewDelegateFlowLayout
 extension TopicTabBarView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let font = Outfit.regularFont(size: 14)
+        let font = Outfit.regularFont(size: CGFloat(self.fontSize))
         let topicName = self.datasource?.listTopics(for: self)[indexPath.row] ?? ""
         let atttributes =  [NSAttributedString.Key.font: font]
         return CGSize(width: topicName.size(withAttributes: atttributes).width + TopicTabBarViewConst.cellPadding, height: collectionView.bounds.height)

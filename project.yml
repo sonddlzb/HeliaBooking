@@ -17,6 +17,7 @@
        - name: SwiftLint
          script: ${PODS_ROOT}/SwiftLint/swiftlint
      settings:
+
        base:
          CODE_SIGN_IDENTITY: iPhone Developer
          CODE_SIGN_STYLE: Manual
@@ -24,6 +25,7 @@
          INFOPLIST_FILE: HeliaHotelBooking/App/Info.plist
          SWIFT_VERSION: 5
          TARGETED_DEVICE_FAMILY: 1
+         PRODUCT_BUNDLE_IDENTIFIER: vn.yopaz.HeliaHotelBooking
      sources:
        - path: HeliaHotelBooking
 
